@@ -1,0 +1,228 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>RW MLBB GRATIS</title>
+
+<style>
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Arial;
+}
+
+body{
+height:100vh;
+overflow:hidden;
+color:white;
+text-align:center;
+background:black;
+}
+
+/* CANVAS NEBULA */
+canvas{
+position:fixed;
+top:0;
+left:0;
+z-index:-1;
+}
+
+/* PAGE */
+.page{
+height:100vh;
+display:flex;
+flex-direction:column;
+justify-content:center;
+align-items:center;
+}
+
+/* TITLE */
+h1{
+font-size:45px;
+letter-spacing:4px;
+text-shadow:0 0 20px #8a2cff;
+}
+
+h2{
+color:#8a2cff;
+text-shadow:0 0 10px #8a2cff;
+}
+
+/* CARD */
+.card{
+background:rgba(255,255,255,0.05);
+backdrop-filter:blur(12px);
+padding:30px;
+border-radius:16px;
+width:300px;
+box-shadow:0 0 40px rgba(140,0,255,0.6);
+}
+
+/* INPUT */
+input{
+width:100%;
+padding:12px;
+margin:8px 0;
+border:none;
+border-radius:8px;
+background:rgba(255,255,255,0.1);
+color:white;
+}
+
+input::placeholder{
+color:#bbb;
+}
+
+/* NEON BUTTON */
+button{
+padding:14px 40px;
+border:none;
+border-radius:12px;
+font-size:18px;
+cursor:pointer;
+color:white;
+background:linear-gradient(45deg,#8a2cff,#00e5ff);
+box-shadow:
+0 0 10px #8a2cff,
+0 0 20px #8a2cff,
+0 0 30px #00e5ff;
+transition:0.3s;
+}
+
+button:hover{
+transform:scale(1.08);
+box-shadow:
+0 0 20px #8a2cff,
+0 0 40px #8a2cff,
+0 0 60px #00e5ff;
+}
+
+</style>
+</head>
+
+<body>
+
+<canvas id="space"></canvas>
+
+<div id="welcome" class="page">
+
+<h1>WELCOME TO</h1>
+<h2>RW MLBB GRATIS</h2>
+<p style="margin:20px">TAP OPEN TO START</p>
+
+<button onclick="openPage()">OPEN</button>
+
+</div>
+
+<div id="form" class="page" style="display:none">
+
+<div class="card">
+
+<h3>JOIN EVENT</h3>
+
+<input id="username" placeholder="Username ML">
+<input id="idml" placeholder="ID ML">
+<input id="server" placeholder="Server">
+
+<button onclick="kirim()">Submit</button>
+
+<p style="font-size:12px;margin-top:10px">
+Isi data dengan benar untuk mengikuti event
+</p>
+
+</div>
+
+</div>
+
+<script>
+
+/* PAGE SWITCH */
+
+function openPage(){
+document.getElementById("welcome").style.display="none"
+document.getElementById("form").style.display="flex"
+}
+
+function kirim(){
+
+let username=document.getElementById("username").value
+let idml=document.getElementById("idml").value
+let server=document.getElementById("server").value
+
+alert(
+"Data terkirim!\n\n"+
+"Username: "+username+
+"\nID: "+idml+
+"\nServer: "+server
+)
+
+}
+
+/* NEBULA + STARS */
+
+const canvas=document.getElementById("space")
+const ctx=canvas.getContext("2d")
+
+canvas.width=window.innerWidth
+canvas.height=window.innerHeight
+
+let stars=[]
+
+for(let i=0;i<200;i++){
+stars.push({
+x:Math.random()*canvas.width,
+y:Math.random()*canvas.height,
+size:Math.random()*2,
+speed:Math.random()*0.3
+})
+}
+
+function draw(){
+
+ctx.fillStyle="black"
+ctx.fillRect(0,0,canvas.width,canvas.height)
+
+for(let s of stars){
+
+ctx.fillStyle="white"
+ctx.beginPath()
+ctx.arc(s.x,s.y,s.size,0,Math.PI*2)
+ctx.fill()
+
+s.y+=s.speed
+
+if(s.y>canvas.height){
+s.y=0
+s.x=Math.random()*canvas.width
+}
+
+}
+
+/* NEBULA GLOW */
+
+let gradient=ctx.createRadialGradient(
+canvas.width/2,
+canvas.height/2,
+100,
+canvas.width/2,
+canvas.height/2,
+600
+)
+
+gradient.addColorStop(0,"rgba(140,0,255,0.5)")
+gradient.addColorStop(1,"transparent")
+
+ctx.fillStyle=gradient
+ctx.fillRect(0,0,canvas.width,canvas.height)
+
+requestAnimationFrame(draw)
+
+}
+
+draw()
+
+</script>
+
+</body>
+</html>
