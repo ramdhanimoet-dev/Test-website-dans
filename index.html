@@ -1,7 +1,10 @@
 <!DOCTYPE html>
 <html>
 <head>
+
 <title>RW MLBB GRATIS</title>
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <style>
 
@@ -20,7 +23,6 @@ text-align:center;
 background:black;
 }
 
-/* CANVAS NEBULA */
 canvas{
 position:fixed;
 top:0;
@@ -29,60 +31,70 @@ z-index:-1;
 }
 
 /* PAGE */
+
 .page{
 height:100vh;
 display:flex;
 flex-direction:column;
 justify-content:center;
 align-items:center;
+padding:20px;
 }
 
 /* TITLE */
+
 h1{
-font-size:45px;
-letter-spacing:4px;
+font-size:10vw;
+letter-spacing:3px;
 text-shadow:0 0 20px #8a2cff;
 }
 
 h2{
+font-size:7vw;
 color:#8a2cff;
 text-shadow:0 0 10px #8a2cff;
 }
 
 /* CARD */
+
 .card{
+width:95%;
+max-width:420px;
 background:rgba(255,255,255,0.05);
 backdrop-filter:blur(12px);
 padding:30px;
-border-radius:16px;
-width:300px;
+border-radius:18px;
 box-shadow:0 0 40px rgba(140,0,255,0.6);
 }
 
 /* INPUT */
+
 input{
 width:100%;
-padding:12px;
-margin:8px 0;
+padding:18px;
+margin:12px 0;
 border:none;
-border-radius:8px;
+border-radius:10px;
 background:rgba(255,255,255,0.1);
 color:white;
+font-size:18px;
 }
 
 input::placeholder{
-color:#bbb;
+color:#ccc;
 }
 
-/* NEON BUTTON */
+/* BUTTON */
+
 button{
-padding:14px 40px;
+width:100%;
+padding:20px;
+font-size:20px;
 border:none;
-border-radius:12px;
-font-size:18px;
+border-radius:14px;
 cursor:pointer;
-color:white;
 background:linear-gradient(45deg,#8a2cff,#00e5ff);
+color:white;
 box-shadow:
 0 0 10px #8a2cff,
 0 0 20px #8a2cff,
@@ -91,11 +103,15 @@ transition:0.3s;
 }
 
 button:hover{
-transform:scale(1.08);
-box-shadow:
-0 0 20px #8a2cff,
-0 0 40px #8a2cff,
-0 0 60px #00e5ff;
+transform:scale(1.05);
+}
+
+/* SMALL TEXT */
+
+p{
+margin-top:10px;
+font-size:12px;
+color:#bbb;
 }
 
 </style>
@@ -107,8 +123,9 @@ box-shadow:
 
 <div id="welcome" class="page">
 
-<h1>WELCOME TO</h1>
+<h1>WELCOME</h1>
 <h2>RW MLBB GRATIS</h2>
+
 <p style="margin:20px">TAP OPEN TO START</p>
 
 <button onclick="openPage()">OPEN</button>
@@ -119,7 +136,7 @@ box-shadow:
 
 <div class="card">
 
-<h3>JOIN EVENT</h3>
+<h3 style="margin-bottom:15px">JOIN EVENT</h3>
 
 <input id="username" placeholder="Username ML">
 <input id="idml" placeholder="ID ML">
@@ -127,9 +144,7 @@ box-shadow:
 
 <button onclick="kirim()">Submit</button>
 
-<p style="font-size:12px;margin-top:10px">
-Isi data dengan benar untuk mengikuti event
-</p>
+<p>Isi data dengan benar untuk mengikuti event</p>
 
 </div>
 
@@ -137,7 +152,7 @@ Isi data dengan benar untuk mengikuti event
 
 <script>
 
-/* PAGE SWITCH */
+/* PINDAH HALAMAN */
 
 function openPage(){
 document.getElementById("welcome").style.display="none"
@@ -159,7 +174,7 @@ alert(
 
 }
 
-/* NEBULA + STARS */
+/* NEBULA BACKGROUND */
 
 const canvas=document.getElementById("space")
 const ctx=canvas.getContext("2d")
@@ -174,7 +189,7 @@ stars.push({
 x:Math.random()*canvas.width,
 y:Math.random()*canvas.height,
 size:Math.random()*2,
-speed:Math.random()*0.3
+speed:Math.random()*0.4
 })
 }
 
@@ -198,8 +213,6 @@ s.x=Math.random()*canvas.width
 }
 
 }
-
-/* NEBULA GLOW */
 
 let gradient=ctx.createRadialGradient(
 canvas.width/2,
