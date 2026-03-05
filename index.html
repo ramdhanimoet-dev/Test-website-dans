@@ -1,117 +1,94 @@
 <!DOCTYPE html>
 <html>
 <head>
-
-<title>RW MLBB GRATIS</title>
-
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LUDO KOTAK</title>
 
 <style>
 
-*{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:Arial;
-}
-
 body{
-height:100vh;
-overflow:hidden;
-color:white;
+font-family:Arial;
 text-align:center;
-background:black;
+background:#111;
+color:white;
+margin:0;
 }
 
-canvas{
+#board{
+display:grid;
+grid-template-columns:repeat(20,22px);
+grid-gap:2px;
+justify-content:center;
+margin:20px auto;
+}
+
+.tile{
+width:22px;
+height:22px;
+background:#333;
+}
+
+.piece{
+width:18px;
+height:18px;
+}
+
+.red{background:red;}
+.blue{background:blue;}
+.green{background:lime;}
+.yellow{background:yellow;}
+
+button{
+padding:12px 25px;
+font-size:18px;
+border:none;
+border-radius:8px;
+background:#00c3ff;
+color:black;
+}
+
+#dice{
+font-size:40px;
+margin:10px;
+}
+
+#toast{
+position:fixed;
+bottom:30px;
+left:50%;
+transform:translateX(-50%);
+background:black;
+color:white;
+padding:10px 20px;
+border-radius:8px;
+display:none;
+}
+
+#winnerScreen{
 position:fixed;
 top:0;
 left:0;
-z-index:-1;
-}
-
-/* PAGE */
-
-.page{
-height:100vh;
-display:flex;
-flex-direction:column;
-justify-content:center;
+width:100%;
+height:100%;
+background:#000000e0;
+display:none;
 align-items:center;
-padding:20px;
+justify-content:center;
+flex-direction:column;
+font-size:40px;
+animation:zoom 0.6s;
 }
 
-/* TITLE */
-
-h1{
-font-size:10vw;
-letter-spacing:3px;
-text-shadow:0 0 20px #8a2cff;
-}
-
-h2{
-font-size:7vw;
-color:#8a2cff;
-text-shadow:0 0 10px #8a2cff;
-}
-
-/* CARD */
-
-.card{
-width:95%;
-max-width:420px;
-background:rgba(255,255,255,0.05);
-backdrop-filter:blur(12px);
-padding:30px;
-border-radius:18px;
-box-shadow:0 0 40px rgba(140,0,255,0.6);
-}
-
-/* INPUT */
-
-input{
-width:100%;
-padding:18px;
-margin:12px 0;
-border:none;
+.rank{
+margin:15px;
+padding:10px 30px;
+background:#222;
 border-radius:10px;
-background:rgba(255,255,255,0.1);
-color:white;
-font-size:18px;
 }
 
-input::placeholder{
-color:#ccc;
-}
-
-/* BUTTON */
-
-button{
-width:100%;
-padding:20px;
-font-size:20px;
-border:none;
-border-radius:14px;
-cursor:pointer;
-background:linear-gradient(45deg,#8a2cff,#00e5ff);
-color:white;
-box-shadow:
-0 0 10px #8a2cff,
-0 0 20px #8a2cff,
-0 0 30px #00e5ff;
-transition:0.3s;
-}
-
-button:hover{
-transform:scale(1.05);
-}
-
-/* SMALL TEXT */
-
-p{
-margin-top:10px;
-font-size:12px;
-color:#bbb;
+@keyframes zoom{
+from{transform:scale(0);opacity:0;}
+to{transform:scale(1);opacity:1;}
 }
 
 </style>
@@ -119,121 +96,168 @@ color:#bbb;
 
 <body>
 
-<canvas id="space"></canvas>
+<h2>LUDO KOTAK</h2>
 
-<div id="welcome" class="page">
+<div id="dice">🎲</div>
 
-<h1>WELCOME</h1>
-<h2>RW MLBB GRATIS</h2>
+<button onclick="rollDice()">LEMpar DADU</button>
 
-<p style="margin:20px">TAP OPEN TO START</p>
+<h3 id="turn">Giliran: red</h3>
 
-<button onclick="openPage()">OPEN</button>
+<div id="board"></div>
 
-</div>
+<div id="toast"></div>
 
-<div id="form" class="page" style="display:none">
-
-<div class="card">
-
-<h3 style="margin-bottom:15px">JOIN EVENT</h3>
-
-<input id="username" placeholder="Username ML">
-<input id="idml" placeholder="ID ML">
-<input id="server" placeholder="Server">
-
-<button onclick="kirim()">Submit</button>
-
-<p>Isi data dengan benar untuk mengikuti event</p>
-
-</div>
-
-</div>
+<div id="winnerScreen"></div>
 
 <script>
 
-/* PINDAH HALAMAN */
+const board=document.getElementById("board")
 
-function openPage(){
-document.getElementById("welcome").style.display="none"
-document.getElementById("form").style.display="flex"
+for(let i=0;i<80;i++){
+let tile=document.createElement("div")
+tile.className="tile"
+tile.id="t"+i
+board.appendChild(tile)
 }
 
-function kirim(){
+let players=[
+{color:"red",pieces:[0,0,0,0]},
+{color:"blue",pieces:[0,0,0,0]},
+{color:"green",pieces:[0,0,0,0]},
+{color:"yellow",pieces:[0,0,0,0]}
+]
 
-let username=document.getElementById("username").value
-let idml=document.getElementById("idml").value
-let server=document.getElementById("server").value
-
-alert(
-"Data terkirim!\n\n"+
-"Username: "+username+
-"\nID: "+idml+
-"\nServer: "+server
-)
-
-}
-
-/* NEBULA BACKGROUND */
-
-const canvas=document.getElementById("space")
-const ctx=canvas.getContext("2d")
-
-canvas.width=window.innerWidth
-canvas.height=window.innerHeight
-
-let stars=[]
-
-for(let i=0;i<200;i++){
-stars.push({
-x:Math.random()*canvas.width,
-y:Math.random()*canvas.height,
-size:Math.random()*2,
-speed:Math.random()*0.4
-})
-}
+let turn=0
+let totalPlayers=4
+let winners=[]
 
 function draw(){
 
-ctx.fillStyle="black"
-ctx.fillRect(0,0,canvas.width,canvas.height)
+document.querySelectorAll(".piece").forEach(p=>p.remove())
 
-for(let s of stars){
-
-ctx.fillStyle="white"
-ctx.beginPath()
-ctx.arc(s.x,s.y,s.size,0,Math.PI*2)
-ctx.fill()
-
-s.y+=s.speed
-
-if(s.y>canvas.height){
-s.y=0
-s.x=Math.random()*canvas.width
-}
-
-}
-
-let gradient=ctx.createRadialGradient(
-canvas.width/2,
-canvas.height/2,
-100,
-canvas.width/2,
-canvas.height/2,
-600
-)
-
-gradient.addColorStop(0,"rgba(140,0,255,0.5)")
-gradient.addColorStop(1,"transparent")
-
-ctx.fillStyle=gradient
-ctx.fillRect(0,0,canvas.width,canvas.height)
-
-requestAnimationFrame(draw)
+players.forEach(p=>{
+p.pieces.forEach(pos=>{
+let el=document.createElement("div")
+el.className="piece "+p.color
+document.getElementById("t"+pos).appendChild(el)
+})
+})
 
 }
 
 draw()
+
+function rollDice(){
+
+let diceEl=document.getElementById("dice")
+
+let spin=setInterval(()=>{
+diceEl.innerText=Math.floor(Math.random()*6)+1
+},80)
+
+setTimeout(()=>{
+
+clearInterval(spin)
+
+let dice=Math.floor(Math.random()*6)+1
+
+diceEl.innerText=dice
+
+movePiece(dice)
+
+},1000)
+
+}
+
+function movePiece(dice){
+
+let player=players[turn]
+
+player.pieces[0]+=dice
+
+if(player.pieces[0]>=79){
+
+player.pieces[0]=79
+
+if(!winners.includes(turn)){
+winners.push(turn)
+}
+
+if(winners.length>=3){
+showWinners()
+return
+}
+
+}
+
+players.forEach((p,i)=>{
+
+if(i!=turn){
+
+p.pieces.forEach((pos,index)=>{
+
+if(pos==player.pieces[0]){
+
+p.pieces[index]=0
+
+toast("MAMPUS KE MAKAN BIJI LU")
+
+}
+
+})
+
+}
+
+})
+
+draw()
+
+turn++
+
+if(turn>=totalPlayers)turn=0
+
+document.getElementById("turn").innerText="Giliran: "+players[turn].color
+
+}
+
+function toast(text){
+
+let t=document.getElementById("toast")
+
+t.innerText=text
+
+t.style.display="block"
+
+setTimeout(()=>{
+t.style.display="none"
+},2000)
+
+}
+
+function showWinners(){
+
+let screen=document.getElementById("winnerScreen")
+
+let text=""
+
+if(winners[0]!=undefined){
+text+=`<div class="rank">🏆 ANJAY JUARA 1 - ${players[winners[0]].color}</div>`
+}
+
+if(winners[1]!=undefined){
+text+=`<div class="rank">🥈 JUARA 2 LUMAYAN - ${players[winners[1]].color}</div>`
+}
+
+if(winners[2]!=undefined){
+text+=`<div class="rank">🥉 JUARA 3 YAUDAHLAH - ${players[winners[2]].color}</div>`
+}
+
+screen.innerHTML=text
+
+screen.style.display="flex"
+
+}
 
 </script>
 
