@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNCHEK DANSFAHIRAAA • Data Korban</title>
+    <title>UNCHEK DAN SFAHIRAAA • Data Korban</title>
     <!-- html2canvas -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <!-- Font modern: Inter + sedikit monospace untuk aksen -->
+    <!-- Font modern -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
     <style>
         * {
             margin: 0;
@@ -18,7 +18,7 @@
         }
 
         body {
-            background: linear-gradient(145deg, #12141c 0%, #1e212e 100%);
+            background: linear-gradient(145deg, #1a1d2b 0%, #252a3a 100%);
             min-height: 100vh;
             display: flex;
             justify-content: center;
@@ -30,31 +30,31 @@
         .main-card {
             max-width: 1100px;
             width: 100%;
-            background: rgba(20, 22, 32, 0.8);
+            background: rgba(25, 28, 40, 0.85);
             backdrop-filter: blur(10px);
             border-radius: 40px;
-            padding: 30px 30px 40px;
-            box-shadow: 0 25px 50px -8px rgba(0,0,0,0.8), 0 0 0 1px rgba(255,215,0,0.15);
-            border: 1px solid rgba(255,215,0,0.1);
+            padding: 30px;
+            box-shadow: 0 25px 50px -8px rgba(0,0,0,0.9), 0 0 0 1px rgba(255,200,100,0.2);
+            border: 1px solid rgba(255,200,100,0.15);
         }
 
         h1 {
             text-align: center;
-            font-size: 2.5rem;
+            font-size: 2.4rem;
             font-weight: 700;
-            letter-spacing: 3px;
+            letter-spacing: 2px;
             color: #FFE9A7;
-            text-shadow: 0 2px 0 #7f5c2e, 0 8px 15px rgba(0,0,0,0.6);
-            margin-bottom: 24px;
+            text-shadow: 0 2px 0 #7f5c2e, 0 8px 15px black;
+            margin-bottom: 20px;
         }
 
         h1 span {
-            background: rgba(0,0,0,0.3);
-            padding: 0 20px;
-            border-radius: 100px;
+            background: rgba(0,0,0,0.4);
+            padding: 0 25px;
+            border-radius: 60px;
             display: inline-block;
             backdrop-filter: blur(4px);
-            border: 1px solid #ffd96655;
+            border: 1px solid #ffd96677;
         }
 
         .container {
@@ -63,19 +63,19 @@
             gap: 25px;
         }
 
-        /* PANEL INPUT - modern, clean */
+        /* PANEL INPUT - modern */
         .input-panel {
             flex: 1.1;
             min-width: 300px;
-            background: #1b1e2c;
+            background: #1e2132;
             border-radius: 28px;
-            padding: 28px 26px;
-            border: 1px solid #3e3f5b;
-            box-shadow: 0 20px 30px -12px #00000080;
+            padding: 28px;
+            border: 1px solid #4a4d6a;
+            box-shadow: 0 20px 30px -12px #000000cc;
         }
 
         .input-panel h2 {
-            color: #ffdc9a;
+            color: #ffd98c;
             font-size: 1.6rem;
             font-weight: 600;
             margin-bottom: 28px;
@@ -89,22 +89,22 @@
 
         .input-group label {
             display: block;
-            color: #a9b2d1;
+            color: #b2bbdd;
             font-weight: 500;
             font-size: 0.8rem;
             text-transform: uppercase;
-            letter-spacing: 1.8px;
+            letter-spacing: 1.5px;
             margin-bottom: 8px;
         }
 
         .input-group input {
             width: 100%;
-            background: #0f111a;
-            border: 1.5px solid #35384f;
-            border-radius: 18px;
+            background: #121520;
+            border: 1.5px solid #3d405b;
+            border-radius: 16px;
             padding: 14px 20px;
             font-size: 1rem;
-            color: #ffffff;
+            color: white;
             outline: none;
             transition: 0.15s;
             font-family: 'Inter', sans-serif;
@@ -115,12 +115,7 @@
             box-shadow: 0 0 0 3px #f5b34230;
         }
 
-        .input-group input::placeholder {
-            color: #4c506b;
-            font-weight: 400;
-        }
-
-        /* STRUK MODERN - ramping, bersih, tidak kuno */
+        /* STRUK SESUAI GAMBAR - dengan warna yang bisa diubah */
         .receipt-wrapper {
             flex: 1;
             min-width: 340px;
@@ -128,149 +123,151 @@
             flex-direction: column;
         }
 
+        /* VARIABEL WARNA - ubah di sini sesuai selera */
         .receipt-card {
+            --header-bg: #2c3e50;      /* warna background header (biru tua) */
+            --text-light: #ffffff;      /* warna teks di header */
+            --accent-color: #e67e22;    /* warna aksen (oranye) */
+            --border-color: #000000;    /* warna border */
+            
             background: #ffffff;
             border-radius: 24px;
-            padding: 26px 24px 22px;
-            box-shadow: 0 20px 35px -5px rgba(0,0,0,0.8), 0 0 0 2px #2b2b2b, 0 0 0 5px #f7f2e4;
-            border: 1px solid #3a3a3a;
+            padding: 0;  /* padding diatur per section */
+            box-shadow: 0 20px 35px -5px black, 0 0 0 2px #2b2b2b;
+            border: 2px solid var(--border-color);
             max-width: 440px;
             margin: 0 auto;
             width: 100%;
-            transition: 0.2s;
+            overflow: hidden;
         }
 
-        /* Header minimal */
+        /* HEADER STRUK - warna bisa diubah */
         .receipt-header {
-            text-align: left;  /* kiri biar modern */
-            margin-bottom: 20px;
-            border-bottom: 2px solid #222;
-            padding-bottom: 14px;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
+            background: var(--header-bg);
+            color: var(--text-light);
+            padding: 22px 24px 18px;
+            text-align: center;
+            border-bottom: 3px solid var(--accent-color);
         }
 
         .judul-besar {
-            font-size: 1.6rem;
-            font-weight: 700;
-            letter-spacing: -0.5px;
-            color: #000000;
+            font-size: 2rem;
+            font-weight: 800;
+            letter-spacing: 2px;
+            color: var(--text-light);
             text-transform: uppercase;
-            line-height: 1.2;
+            line-height: 1.3;
             font-family: 'Inter', sans-serif;
+            text-shadow: 0 2px 0 rgba(0,0,0,0.3);
         }
 
         .sub-judul {
-            font-size: 0.85rem;
-            color: #ffffff;
-            background: #1f1f1f;
-            padding: 6px 18px;
+            font-size: 1.1rem;
+            color: var(--text-light);
+            background: rgba(0,0,0,0.3);
+            padding: 6px 20px;
             font-weight: 600;
-            border-radius: 50px; /* sedikit pill, tapi masih modern */
-            letter-spacing: 0.5px;
-            white-space: nowrap;
-            margin-left: 12px;
-        }
-
-        /* Konten row - proporsional */
-        .detail-row {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            border-bottom: 1.5px solid #e0e0e0;
-            padding: 14px 0;
-            gap: 15px;
-        }
-
-        .detail-row .label {
-            font-weight: 600;
-            color: #2c2c2c;
-            text-transform: uppercase;
-            font-size: 0.8rem;
-            letter-spacing: 1px;
-            background: #f0f0f0;
-            padding: 5px 14px;
             border-radius: 40px;
-            border: 1px solid #aaa;
+            letter-spacing: 0.8px;
+            margin-top: 12px;
+            display: inline-block;
+            border: 1px solid rgba(255,255,255,0.3);
         }
 
-        .detail-row .value {
+        /* KONTEN STRUK */
+        .receipt-content {
+            padding: 24px 24px 20px;
+            background: #ffffff;
+        }
+
+        .data-row {
+            display: flex;
+            align-items: baseline;
+            margin-bottom: 20px;
+            border-bottom: 2px dashed #ccc;
+            padding-bottom: 12px;
+        }
+
+        .data-label {
+            font-weight: 700;
+            color: #222;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            min-width: 100px;
+            letter-spacing: 1px;
+        }
+
+        .data-value {
             font-family: 'JetBrains Mono', monospace;
             font-weight: 500;
-            color: #121212;
-            background: #f7f7f7;
-            padding: 6px 16px;
-            border-radius: 40px;
-            max-width: 240px;
-            word-break: break-word;
+            color: #111;
+            background: #f5f5f5;
+            padding: 8px 16px;
+            border-radius: 12px;
+            flex: 1;
             text-align: right;
-            border: 1px solid #b0b0b0;
-            font-size: 0.95rem;
-            box-shadow: inset 0 1px 3px #0000001a;
+            border: 1px solid #aaa;
+            font-size: 1rem;
+            word-break: break-word;
+            margin-left: 15px;
+            box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
         }
 
-        /* ID GAME dengan gaya lebih segar */
-        .id-section {
-            background: #2d2d2d;
-            border-radius: 18px;
-            margin: 18px 0 8px;
-            padding: 14px 18px;
+        /* ID GAME */
+        .id-container {
+            background: #f0f0f0;
+            border-radius: 16px;
+            padding: 16px 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border: 1px solid #000;
+            border: 2px solid #333;
+            margin: 10px 0 5px;
         }
 
-        .id-label {
-            font-weight: 600;
-            color: #ffffff;
-            background: transparent;
-            font-size: 0.9rem;
-            letter-spacing: 1.5px;
+        .id-label-large {
+            font-weight: 700;
+            color: #111;
+            font-size: 1rem;
             text-transform: uppercase;
         }
 
-        .id-value {
+        .id-value-large {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 1.3rem;
+            font-size: 1.4rem;
             font-weight: 600;
             color: #000;
-            background: #ffffff;
+            background: white;
             padding: 6px 20px;
-            border-radius: 60px;
-            letter-spacing: 0.5px;
+            border-radius: 40px;
             border: 2px solid #000;
-            box-shadow: 0 2px 0 #000;
         }
 
-        /* Footer - modern simple */
-        .footer-struk {
+        /* FOOTER */
+        .receipt-footer {
             display: flex;
             justify-content: flex-end;
             margin-top: 16px;
             border-top: 2px solid #222;
-            padding-top: 14px;
+            padding-top: 16px;
         }
 
-        .footer-struk .stamp {
+        .stamp {
             font-size: 1rem;
             background: transparent;
             color: #1f1f1f;
-            padding: 4px 16px;
+            padding: 4px 20px;
             border-radius: 30px;
             font-weight: 600;
             border: 2px solid #1f1f1f;
-            letter-spacing: 1px;
         }
 
         .watermark {
             text-align: right;
-            margin-top: 8px;
+            margin-top: 10px;
             font-size: 0.65rem;
-            color: #5a5a5a;
+            color: #666;
             font-weight: 500;
-            text-transform: uppercase;
         }
 
         /* BUTTONS */
@@ -279,119 +276,162 @@
             flex-wrap: wrap;
             justify-content: center;
             gap: 16px;
-            margin-top: 28px;
+            margin-top: 25px;
         }
 
         .btn {
-            background: #21243a;
+            background: #23263b;
             border: none;
             border-radius: 50px;
-            padding: 16px 32px;
+            padding: 15px 32px;
             font-weight: 600;
             font-size: 1.2rem;
-            letter-spacing: 1px;
             color: #f5e199;
-            box-shadow: 0 6px 0 #0c0e17, 0 8px 20px black;
+            box-shadow: 0 6px 0 #0e101b, 0 8px 20px black;
             cursor: pointer;
             transition: 0.1s ease;
             display: inline-flex;
             align-items: center;
-            gap: 10px;
-            border: 1px solid #5f5f8b;
+            gap: 8px;
+            border: 1px solid #61658b;
         }
 
         .btn:active {
             transform: translateY(4px);
-            box-shadow: 0 2px 0 #0c0e17, 0 8px 18px black;
+            box-shadow: 0 2px 0 #0e101b, 0 8px 18px black;
         }
 
         .btn.print-btn {
             background: #9b7e56;
             color: #171412;
-            box-shadow: 0 6px 0 #5c432a, 0 8px 18px black;
+            box-shadow: 0 6px 0 #5c432a;
         }
 
         .btn.download-btn {
             background: #3d4b44;
             color: #e5f0ce;
-            box-shadow: 0 6px 0 #1d3124, 0 8px 18px black;
+            box-shadow: 0 6px 0 #1d3124;
         }
 
         .info-note {
             text-align: center;
-            margin-top: 30px;
-            color: #a3a6c0;
+            margin-top: 25px;
+            color: #abafcc;
             font-size: 0.9rem;
-            border-top: 1px dashed #5a5e7a;
-            padding-top: 20px;
-            font-style: italic;
+            border-top: 1px dashed #5a5e80;
+            padding-top: 18px;
         }
-        .info-note i {
-            color: #fdde7e;
+        
+        /* Pilihan warna - bisa dicoba */
+        .color-options {
+            display: flex;
+            gap: 10px;
+            justify-content: center;
+            margin-top: 20px;
+            flex-wrap: wrap;
         }
+        
+        .color-btn {
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            border: 3px solid white;
+            cursor: pointer;
+            box-shadow: 0 2px 8px black;
+            transition: 0.2s;
+        }
+        
+        .color-btn:hover {
+            transform: scale(1.15);
+            border-color: gold;
+        }
+        
+        .color-btn.blue { background: #2c3e50; }
+        .color-btn.green { background: #1e4a3b; }
+        .color-btn.purple { background: #4a2c5f; }
+        .color-btn.red { background: #8b2c2c; }
+        .color-btn.teal { background: #1d5b5b; }
     </style>
 </head>
 <body>
     <div class="main-card">
-        <h1><span>⚡ UNCHEK DANSFAHIRAAA ⚡</span></h1>
+        <h1><span>⚡ UNCHEK DAN SFAHIRAAA ⚡</span></h1>
 
         <div class="container">
             <!-- input panel -->
             <div class="input-panel">
-                <h2>✎ Masukkan data</h2>
+                <h2>✎ ISI DATA KORBAN</h2>
                 <div class="input-group">
                     <label>📧 GMAIL</label>
-                    <input type="email" id="gmailInput" placeholder="contoh: korban@gmail.com" value="korban.unchek@fahira.com">
+                    <input type="email" id="gmailInput" placeholder="email korban" value="korban.unchek@gmail.com">
                 </div>
                 <div class="input-group">
                     <label>🔒 PASSWORD</label>
-                    <input type="text" id="passwordInput" placeholder="password" value="Rahasia123">
+                    <input type="text" id="passwordInput" placeholder="password" value="rahasia123">
                 </div>
                 <div class="input-group">
                     <label>🎮 ID GAME</label>
-                    <input type="text" id="gameIdInput" placeholder="ID game" value="UNCHEK#8888">
+                    <input type="text" id="gameIdInput" placeholder="ID game" value="UNCHEK#6969">
                 </div>
-                <p style="color:#959ec2; font-size:0.8rem; margin-top:20px;">• data langsung muncul di struk • cetak/download sebagai PNG</p>
+                <p style="color:#aab3d5; font-size:0.85rem; margin-top:20px;">• data langsung muncul di struk • klik tombol di bawah</p>
             </div>
 
-            <!-- struk modern -->
+            <!-- STRUK SESUAI GAMBAR -->
             <div class="receipt-wrapper">
                 <div id="receiptElement" class="receipt-card">
+                    <!-- HEADER DENGAN WARNA YANG BISA DIGANTI -->
                     <div class="receipt-header">
-                        <div class="judul-besar">UNCHEK<br>DANSFAHIRAAA</div>
-                        <div class="sub-judul">DATA EMAIL KORBAN</div>
-                    </div>
-
-                    <div class="detail-row">
-                        <span class="label">GMAIL</span>
-                        <span class="value" id="displayGmail">korban.unchek@fahira.com</span>
-                    </div>
-                    <div class="detail-row">
-                        <span class="label">PASSWORD</span>
-                        <span class="value" id="displayPassword">Rahasia123</span>
-                    </div>
-
-                    <div class="id-section">
-                        <span class="id-label">ID GAME</span>
-                        <span class="id-value" id="displayGameId">UNCHEK#8888</span>
-                    </div>
-
-                    <div class="footer-struk">
-                        <span class="stamp">✓ TERVERIFIKASI</span>
+                        <div class="judul-besar">UNCHEK DAN<br>SFAHIRAAA</div>
+                        <div class="sub-judul">BERIKUT DATA KORBAN</div>
                     </div>
                     
-                    <div class="watermark">• unchek database •</div>
+                    <!-- CONTENT -->
+                    <div class="receipt-content">
+                        <div class="data-row">
+                            <span class="data-label">GMAIL :</span>
+                            <span class="data-value" id="displayGmail">korban.unchek@gmail.com</span>
+                        </div>
+                        <div class="data-row">
+                            <span class="data-label">PASSWORD :</span>
+                            <span class="data-value" id="displayPassword">rahasia123</span>
+                        </div>
+                        
+                        <!-- ID GAME -->
+                        <div class="id-container">
+                            <span class="id-label-large">ID GAME :</span>
+                            <span class="id-value-large" id="displayGameId">UNCHEK#6969</span>
+                        </div>
+                        
+                        <!-- FOOTER -->
+                        <div class="receipt-footer">
+                            <span class="stamp">✓ VALID</span>
+                        </div>
+                        <div class="watermark">• unchek database official •</div>
+                    </div>
                 </div>
 
+                <!-- TOMBOL AKSI & PILIHAN WARNA -->
                 <div class="action-buttons">
                     <button class="btn print-btn" id="captureBtn">📸 CETAK FOTO</button>
                     <button class="btn download-btn" id="downloadBtn">⬇️ DOWNLOAD PNG</button>
+                </div>
+                
+                <!-- PILIHAN WARNA UNTUK HEADER -->
+                <div style="text-align:center; margin-top:20px;">
+                    <p style="color:#ddd; margin-bottom:8px; font-size:0.9rem;">⬇️ ganti warna header ⬇️</p>
+                    <div class="color-options">
+                        <div class="color-btn blue" onclick="changeHeaderColor('#2c3e50')" title="Biru Tua"></div>
+                        <div class="color-btn green" onclick="changeHeaderColor('#1e4a3b')" title="Hijau"></div>
+                        <div class="color-btn purple" onclick="changeHeaderColor('#4a2c5f')" title="Ungu"></div>
+                        <div class="color-btn red" onclick="changeHeaderColor('#8b2c2c')" title="Merah"></div>
+                        <div class="color-btn teal" onclick="changeHeaderColor('#1d5b5b')" title="Teal"></div>
+                    </div>
                 </div>
             </div>
         </div>
 
         <div class="info-note">
-            <i>⚡ tampilan struk bersih & modern — teks proporsional, gak kuno. ⚡</i>
+            <i>⚡ struk sesuai gambar: "UNCHEK DAN SFAHIRAAA" • "BERIKUT DATA KORBAN" • GMAIL : PASSWORD : ⚡</i>
         </div>
     </div>
 
@@ -432,10 +472,10 @@
                     const newWindow = window.open('', '_blank');
                     if (newWindow) {
                         newWindow.document.write(`
-                            <html><head><title>Cetak - UNCHEK DANSFAHIRAAA</title>
+                            <html><head><title>Cetak - UNCHEK DAN SFAHIRAAA</title>
                             <style>body { margin:0; display:flex; justify-content:center; align-items:center; min-height:100vh; background:#1d1d2b; } img { max-width:100%; box-shadow:0 0 25px black; border:4px solid #fff; } </style>
                             </head><body>
-                            <img src="${imgData}" alt="struk modern" />
+                            <img src="${imgData}" alt="struk data korban" />
                             <script>setTimeout(()=>{window.print()},200);</${script}>
                             </body></html>`);
                         newWindow.document.close();
@@ -457,6 +497,12 @@
                     link.click();
                 }).catch(err => alert('Gagal download: ' + err));
             });
+            
+            // Fungsi untuk mengganti warna header
+            window.changeHeaderColor = function(color) {
+                const receipt = document.querySelector('.receipt-card');
+                receipt.style.setProperty('--header-bg', color);
+            };
         })();
     </script>
 </body>
