@@ -4,7 +4,6 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
   <title>DansFahiraaa · modern store</title>
-  <!-- Font & icons (clean, modern) -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
@@ -18,39 +17,46 @@
 
     body {
       font-family: 'Inter', sans-serif;
-      background: #f2f4f8; /* fallback, image will overlay */
       min-height: 100vh;
       display: flex;
       flex-direction: column;
       align-items: center;
       justify-content: flex-start;
       padding: 0 0 24px 0;
-      /* background image with overlay for readability */
-      background-image: url('https://files.catbox.moe/umxu2k.jpg');
-      background-size: cover;
-      background-position: center 20%;
-      background-repeat: no-repeat;
-      background-attachment: fixed;
+      background: #f5f5f7; /* fallback color */
       position: relative;
     }
 
-    /* semi-transparent overlay so text is crisp */
+    /* background dengan gambar - pake link imgbb biar stabil */
     body::before {
       content: "";
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
-      background-color: rgba(255, 255, 255, 0.72);
-      backdrop-filter: blur(2px);
+      background-image: url('https://i.ibb.co/bRP0H0B/background.jpg');
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-attachment: fixed;
+      opacity: 0.25; /* biar teks kebaca */
       z-index: 0;
       pointer-events: none;
     }
 
-    /* main container sits above overlay */
+    /* overlay putih biar teks jelas */
+    body::after {
+      content: "";
+      position: fixed;
+      top: 0; left: 0; width: 100%; height: 100%;
+      background-color: rgba(255, 255, 255, 0.6);
+      z-index: 1;
+      pointer-events: none;
+    }
+
     .store-container {
       position: relative;
       z-index: 2;
       width: 100%;
-      max-width: 400px; /* ideal hp width */
+      max-width: 400px;
       margin: 16px auto;
       display: flex;
       flex-direction: column;
@@ -58,15 +64,15 @@
       padding: 0 16px;
     }
 
-    /* ----- header card ----- */
+    /* header */
     .header-card {
-      background: rgba(255, 255, 255, 0.75);
+      background: rgba(255, 255, 255, 0.9);
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       border-radius: 32px;
       padding: 14px 20px;
-      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.08), 0 2px 6px rgba(0,0,0,0.05);
-      border: 1px solid rgba(255,255,255,0.5);
+      box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+      border: 1px solid rgba(255,255,255,0.8);
       display: flex;
       align-items: center;
       gap: 14px;
@@ -77,7 +83,7 @@
       height: 52px;
       border-radius: 18px;
       object-fit: cover;
-      background: white;
+      background: #f0f0f0;
       box-shadow: 0 4px 10px rgba(0,0,0,0.1);
       border: 2px solid white;
     }
@@ -86,30 +92,25 @@
       font-size: 1.9rem;
       font-weight: 700;
       letter-spacing: -0.5px;
-      background: linear-gradient(145deg, #1a1e2b, #2d3349);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
-      text-shadow: 0 2px 5px rgba(0,0,0,0.05);
+      color: #1a1e2b;
     }
 
-    /* ----- product card (modern, glassmorphism) ----- */
+    /* product card */
     .product-card {
-      background: rgba(255, 255, 255, 0.8);
+      background: rgba(255, 255, 255, 0.95);
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
       border-radius: 36px;
       padding: 22px 18px 20px 18px;
-      border: 1px solid rgba(255,255,255,0.5);
-      box-shadow: 0 20px 35px -8px rgba(0,0,0,0.2);
-      transition: transform 0.2s;
+      border: 1px solid rgba(255,255,255,0.8);
+      box-shadow: 0 20px 35px -8px rgba(0,0,0,0.15);
     }
 
     .product-image {
       width: 100%;
       border-radius: 28px;
       overflow: hidden;
-      background: #f0eff5;
+      background: #f8f8f8;
       box-shadow: inset 0 0 0 1px rgba(0,0,0,0.05), 0 10px 20px -10px rgba(0,0,0,0.2);
       margin-bottom: 16px;
     }
@@ -118,47 +119,35 @@
       width: 100%;
       height: auto;
       display: block;
-      transition: scale 0.2s;
     }
 
     .desc-area {
       padding: 4px 6px 12px 6px;
     }
 
-    .product-title {
-      font-size: 1.8rem;
-      font-weight: 700;
-      line-height: 1.2;
-      color: #1f1f2b;
-      margin-bottom: 8px;
-      letter-spacing: -0.5px;
-    }
-
     .detail-list {
-      background: rgba(245, 245, 250, 0.7);
+      background: rgba(240, 240, 250, 0.7);
       border-radius: 22px;
       padding: 16px 18px;
       margin: 10px 0 16px 0;
       font-size: 1rem;
-      color: #1d1e2c;
       border: 1px solid rgba(255,255,255,0.6);
-      box-shadow: inset 0 2px 4px rgba(0,0,0,0.02);
     }
 
     .detail-list p {
-      margin: 6px 0;
+      margin: 8px 0;
       display: flex;
       flex-wrap: wrap;
       align-items: baseline;
     }
 
-    .detail-list .label {
-      font-weight: 600;
-      min-width: 82px;
+    .label {
+      font-weight: 700;
+      min-width: 100px;
       color: #2d2f4a;
     }
 
-    .detail-list .value {
+    .value {
       font-weight: 500;
       color: #111;
     }
@@ -166,10 +155,7 @@
     .price-tag {
       font-size: 1.7rem;
       font-weight: 800;
-      background: linear-gradient(135deg, #1f2937, #111827);
-      -webkit-background-clip: text;
-      -webkit-text-fill-color: transparent;
-      background-clip: text;
+      color: #1f2937;
       margin-left: 8px;
     }
 
@@ -190,39 +176,25 @@
       align-items: center;
       justify-content: center;
       gap: 12px;
-      background: white;
-      box-shadow: 0 6px 16px rgba(0,0,0,0.05);
-      backdrop-filter: blur(4px);
-      border: 1px solid rgba(255,255,255,0.7);
       cursor: pointer;
       transition: all 0.15s;
       text-decoration: none;
       color: #1e1e2a;
+      box-shadow: 0 6px 16px rgba(0,0,0,0.1);
     }
 
     .btn i {
       font-size: 1.3rem;
-      opacity: 0.8;
     }
 
     .btn-spek {
-      background: rgba(20, 30, 45, 0.9);
+      background: #1a2639;
       color: white;
-      border: 1px solid rgba(255,255,255,0.2);
-      backdrop-filter: blur(8px);
-      box-shadow: 0 12px 25px -8px rgba(0,40,80,0.4);
-    }
-
-    .btn-spek i {
-      color: #b2c9ff;
     }
 
     .btn-wa {
-      background: rgba(37, 211, 102, 0.85);
-      color: #0b2b1a;
-      border: 1px solid rgba(255,255,255,0.6);
-      font-weight: 700;
-      backdrop-filter: blur(4px);
+      background: #25D366;
+      color: #075e23;
     }
 
     .btn-wa i {
@@ -234,56 +206,37 @@
     }
 
     .reminder-text {
-      background: rgba(10, 15, 30, 0.2);
+      background: rgba(0, 0, 0, 0.05);
       border-radius: 60px;
       padding: 14px 18px;
       text-align: center;
       font-size: 0.95rem;
       font-weight: 500;
       color: #11131f;
-      backdrop-filter: blur(4px);
-      border: 1px dashed rgba(0,0,0,0.15);
+      border: 1px dashed rgba(0,0,0,0.2);
       margin-top: 6px;
     }
 
-    .reminder-text i {
-      margin-right: 6px;
-      color: #2b3b4b;
-    }
-
-    /* link untuk spek (halaman lain pura2, pakai jangkar ke modal / dummy) */
-    .spek-link {
-      text-decoration: none;
-      width: 100%;
-    }
-
-    /* mini modal untuk "halaman lain" – simple spek lengkap overlay */
+    /* overlay spek */
     .spek-overlay {
       display: none;
       position: fixed;
       top: 0; left: 0; width: 100%; height: 100%;
-      background-color: rgba(0,0,0,0.3);
-      backdrop-filter: blur(8px);
+      background-color: rgba(0,0,0,0.5);
+      backdrop-filter: blur(5px);
       align-items: center;
       justify-content: center;
       z-index: 999;
     }
 
     .spek-card {
-      background: rgba(255, 255, 255, 0.95);
+      background: white;
       width: 90%;
       max-width: 380px;
       border-radius: 48px;
       padding: 28px 24px;
       box-shadow: 0 40px 70px rgba(0,0,0,0.4);
       text-align: center;
-      border: 2px solid white;
-      animation: fadePop 0.2s;
-    }
-
-    @keyframes fadePop {
-      0% { opacity: 0.5; transform: scale(0.9); }
-      100% { opacity: 1; transform: scale(1); }
     }
 
     .spek-card h3 {
@@ -294,22 +247,17 @@
     }
 
     .foto-lengkap-grid {
-      background: #eaeef5;
+      background: #f5f5f5;
       border-radius: 28px;
-      padding: 24px 12px;
+      padding: 20px;
       margin: 15px 0;
-      background-image: repeating-linear-gradient(45deg, rgba(0,0,0,0.02) 0px, rgba(0,0,0,0.02) 10px, transparent 10px, transparent 20px);
     }
 
-    .mockup-foto {
-      font-size: 5rem;
-      filter: drop-shadow(0 10px 10px rgba(0,0,0,0.1));
-    }
-
-    .foto-lengkap-grid p {
-      margin-top: 10px;
-      font-weight: 500;
-      color: #1f2a3f;
+    .foto-lengkap-grid img {
+      width: 100%;
+      border-radius: 20px;
+      border: 3px solid white;
+      box-shadow: 0 8px 15px rgba(0,0,0,0.2);
     }
 
     .btn-tutup {
@@ -324,132 +272,81 @@
       margin-top: 10px;
       cursor: pointer;
     }
-
-    .btn-tutup i {
-      margin-right: 8px;
-    }
-
-    /* footer / credit small (optional) */
-    .credit-note {
-      color: rgba(20,20,30,0.6);
-      font-size: 0.75rem;
-      text-align: center;
-      margin-top: 8px;
-    }
-
-    /* spacing */
-    .spacer {
-      height: 4px;
-    }
   </style>
 </head>
 <body>
   <div class="store-container">
-
-    <!-- header dengan logo + text -->
+    <!-- header -->
     <div class="header-card">
-      <img src="https://imgur.com/a/BJrKsEq" alt="logo DansFahiraaa" class="logo-img" loading="lazy">
+      <img src="https://i.ibb.co/5Wn0Hqs/logo.jpg" alt="logo DansFahiraaa" class="logo-img" onerror="this.src='https://via.placeholder.com/52?text=Logo'">
       <span class="brand-text">DansFahiraaa</span>
     </div>
 
-    <!-- product card utama -->
+    <!-- product card -->
     <div class="product-card">
       <div class="product-image">
-        <img src="https://imgur.com/a/BJrKsEq" alt="Produk Monsep" loading="lazy">
+        <img src="https://i.ibb.co/S6NQZR9/produk.png" alt="Produk Monsep" onerror="this.src='https://via.placeholder.com/400x300?text=Produk'">
       </div>
 
       <div class="desc-area">
-        <!-- deskripsi sesuai permintaan -->
         <div class="detail-list">
           <p><span class="label">𝗠𝗢𝗡𝗦𝗘𝗣</span></p>
           <p><span class="label">TAKE SGMAIL FRESH</span> <span class="value">-PLAT GOOGLE R</span></p>
           <p style="margin-top: 12px;"><span class="label">𝗛𝗔𝗥𝗚𝗔</span> <span class="value price-tag">idr 22.000</span></p>
         </div>
 
-        <!-- dua button: SPEK LENGKAP dan PESAN VIA WA -->
         <div class="button-group">
-          <!-- spek lengkap trigger modal / "halaman lain" -->
-          <a href="javascript:void(0);" class="spek-link" id="showSpekBtn">
-            <div class="btn btn-spek">
-              <i class="fa-solid fa-microchip"></i> SPEK LENGKAP
-            </div>
+          <a href="javascript:void(0);" class="btn btn-spek" id="showSpekBtn">
+            <i class="fa-solid fa-microchip"></i> SPEK LENGKAP
           </a>
 
-          <!-- PESAN VIA WA (link langsung) -->
-          <a href="https://wa.me//6283878779524?text=Halo%20DansFahiraaa%2C%20saya%20mau%20order%20MONSESP%20SGMAIL%20FRESH%20%7C%20idr%2022.000" target="_blank" class="spek-link">
-            <div class="btn btn-wa">
-              <i class="fa-brands fa-whatsapp"></i> PESAN VIA WA
-            </div>
+          <a href="https://wa.me/6283878779524?text=Halo%20DansFahiraaa%2C%20saya%20mau%20order%20MONSESP%20SGMAIL%20FRESH%20-%20idr%2022.000" target="_blank" class="btn btn-wa">
+            <i class="fa-brands fa-whatsapp"></i> PESAN VIA WA
           </a>
         </div>
 
-        <!-- deskripsi tambahan "Harap Sertakan Screenshot ..." -->
         <div class="reminder-text">
           <i class="fa-regular fa-camera"></i> Harap Sertakan Screenshot Akun Yang Ingin Anda Beli
         </div>
       </div>
     </div>
-
-    <!-- sedikit catatan tampilan (bukan bagian utama) -->
-    <div class="credit-note">
-      <i class="fa-regular fa-heart"></i> trusted modern store
-    </div>
   </div>
 
-  <!-- SPEK LENGKAP OVERLAY / HALAMAN LAIN (berisi foto lengkap) -->
+  <!-- SPEK LENGKAP OVERLAY -->
   <div class="spek-overlay" id="spekOverlay">
     <div class="spek-card">
       <h3>✨ SPEK LENGKAP</h3>
       <div class="foto-lengkap-grid">
-        <div class="mockup-foto">
-          <i class="fa-solid fa-image"></i> <i class="fa-solid fa-images"></i>
-        </div>
-        <!-- foto lengkap dari barang (gunakan gambar yang sama untuk contoh / bisa diganti jika ada link khusus) 
-             sesuai instruksi "foto lengkap dari barang tersebut", tapi karena tidak diberi link khusus, saya tampilkan preview visual -->
-        <img src="https://files.catbox.moe/6v98ew.png" alt="foto lengkap" style="width:100%; border-radius:28px; margin:10px 0; border:2px solid white; box-shadow: 0 8px 15px rgba(0,0,0,0.2);">
-        <p style="font-weight: 600;">📸 unit real pict · include semua aksesoris</p>
-        <p style="opacity:0.7; font-size:0.9rem;">(tampilan foto dokumentasi lengkap)</p>
+        <img src="https://i.ibb.co/S6NQZR9/produk.png" alt="foto lengkap produk" onerror="this.src='https://via.placeholder.com/300?text=Foto+Lengkap'">
+        <p style="margin-top: 15px; font-weight: 500;">✓ Foto dokumentasi lengkap</p>
+        <p style="opacity:0.7; font-size:0.9rem;">(all angle + kelengkapan)</p>
       </div>
       <button class="btn-tutup" id="closeSpekBtn"><i class="fa-regular fa-circle-xmark"></i> TUTUP</button>
     </div>
   </div>
 
   <script>
-    (function() {
-      // ambil elemen
-      const showBtn = document.getElementById('showSpekBtn');
-      const overlay = document.getElementById('spekOverlay');
-      const closeBtn = document.getElementById('closeSpekBtn');
+    const showBtn = document.getElementById('showSpekBtn');
+    const overlay = document.getElementById('spekOverlay');
+    const closeBtn = document.getElementById('closeSpekBtn');
 
-      // fungsi buka overlay (simulasi halaman lain)
-      if (showBtn) {
-        showBtn.addEventListener('click', function(e) {
-          e.preventDefault();
-          overlay.style.display = 'flex';
-          // sedikit efek scroll lock biar fokus
-          document.body.style.overflow = 'hidden';
-        });
+    showBtn.addEventListener('click', function(e) {
+      e.preventDefault();
+      overlay.style.display = 'flex';
+      document.body.style.overflow = 'hidden';
+    });
+
+    closeBtn.addEventListener('click', function() {
+      overlay.style.display = 'none';
+      document.body.style.overflow = 'auto';
+    });
+
+    overlay.addEventListener('click', function(e) {
+      if (e.target === overlay) {
+        overlay.style.display = 'none';
+        document.body.style.overflow = 'auto';
       }
-
-      // fungsi tutup
-      if (closeBtn) {
-        closeBtn.addEventListener('click', function() {
-          overlay.style.display = 'none';
-          document.body.style.overflow = 'auto';
-        });
-      }
-
-      // klik background overlay bisa tutup (optional)
-      overlay.addEventListener('click', function(e) {
-        if (e.target === overlay) {
-          overlay.style.display = 'none';
-          document.body.style.overflow = 'auto';
-        }
-      });
-    })();
+    });
   </script>
-
-  <!-- tambahan supaya WA link tidak usah konflik -->
-  <!-- btn pesan via wa sudah pakai target _blank biar gak ninggalin page -->
 </body>
 </html>
