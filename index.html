@@ -185,7 +185,7 @@
             color: #FFD966;
         }
 
-        /* STRUK KOTAK MODERN */
+        /* STRUK MODERN - TANPA KOTAK DI BELAKANG VALUE */
         .receipt-wrapper {
             flex: 1;
             min-width: 360px;
@@ -199,10 +199,10 @@
             --border-color: #000000;
             
             background: #ffffff;
-            border-radius: 0px;
+            border-radius: 16px; /* sedikit lengkung modern */
             padding: 0;
-            box-shadow: 0 30px 40px -15px black, 0 0 0 3px #2b2b2b;
-            border: 4px solid var(--border-color);
+            box-shadow: 0 30px 40px -15px black, 0 0 0 1px rgba(0,0,0,0.2);
+            border: 1px solid rgba(0,0,0,0.1);
             max-width: 460px;
             margin: 0 auto;
             width: 100%;
@@ -213,132 +213,121 @@
         .receipt-header {
             background: var(--header-bg);
             color: var(--text-light);
-            padding: 24px 24px 20px;
+            padding: 28px 24px 22px;
             text-align: center;
-            border-bottom: 4px solid #000000;
         }
 
         .judul-besar {
-            font-size: 2.1rem;
+            font-size: 2.2rem;
             font-weight: 800;
-            letter-spacing: 2px;
+            letter-spacing: 1px;
             color: var(--text-light);
             text-transform: uppercase;
-            line-height: 1.3;
+            line-height: 1.2;
             font-family: 'Inter', sans-serif;
-            text-shadow: 0 3px 0 rgba(0,0,0,0.3);
         }
 
         .sub-judul {
-            font-size: 1.1rem;
-            color: var(--text-light);
-            background: rgba(0,0,0,0.4);
-            padding: 8px 24px;
-            font-weight: 600;
-            border-radius: 0px;
-            letter-spacing: 1px;
+            font-size: 1rem;
+            color: rgba(255,255,255,0.9);
+            background: rgba(0,0,0,0.2);
+            padding: 6px 20px;
+            font-weight: 500;
+            border-radius: 40px;
+            letter-spacing: 0.5px;
             margin-top: 14px;
             display: inline-block;
-            border: 2px solid #000000;
             backdrop-filter: blur(2px);
+            border: 1px solid rgba(255,255,255,0.1);
         }
 
         .receipt-content {
-            padding: 28px 24px 24px;
+            padding: 30px 28px 28px;
             background: #ffffff;
         }
 
+        /* ROW DATA - TANPA KOTAK DI VALUE */
         .data-row {
             display: flex;
             align-items: baseline;
             margin-bottom: 22px;
-            border-bottom: 3px solid #000;
-            padding-bottom: 14px;
+            padding-bottom: 12px;
+            border-bottom: 1px solid #eaeaea;
         }
 
         .data-label {
-            font-weight: 700;
-            color: #111;
+            font-weight: 600;
+            color: #555;
             text-transform: uppercase;
-            font-size: 0.95rem;
-            min-width: 105px;
-            letter-spacing: 1px;
+            font-size: 0.85rem;
+            min-width: 100px;
+            letter-spacing: 0.8px;
             font-family: 'Inter', sans-serif;
         }
 
         .data-value {
             font-family: 'JetBrains Mono', monospace;
             font-weight: 500;
-            color: #000;
-            background: #f5f5f5;
-            padding: 8px 18px;
-            border-radius: 0px;
-            flex: 1;
-            text-align: right;
-            border: 2px solid #000;
+            color: #111;
             font-size: 1rem;
             word-break: break-word;
             margin-left: 15px;
-            box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
+            flex: 1;
+            text-align: right;
         }
 
+        /* ID GAME - TANPA KOTAK */
         .id-container {
-            background: #f0f0f0;
-            border-radius: 0px;
-            padding: 18px 22px;
+            margin: 25px 0 20px;
+            padding: 15px 0;
+            border-top: 2px solid #222;
+            border-bottom: 2px solid #222;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border: 3px solid #000;
-            margin: 15px 0 10px;
-            box-shadow: inset 0 2px 5px rgba(0,0,0,0.05);
         }
 
         .id-label-large {
-            font-weight: 700;
-            color: #111;
-            font-size: 1.1rem;
+            font-weight: 600;
+            color: #333;
+            font-size: 1rem;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         .id-value-large {
             font-family: 'JetBrains Mono', monospace;
-            font-size: 1.5rem;
+            font-size: 1.4rem;
             font-weight: 600;
             color: #000;
-            background: white;
-            padding: 8px 22px;
-            border-radius: 0px;
-            border: 3px solid #000;
-            box-shadow: 0 2px 0 #000;
+            text-align: right;
         }
 
+        /* FOOTER MODERN */
         .receipt-footer {
             display: flex;
             justify-content: flex-end;
-            margin-top: 18px;
-            border-top: 4px solid #000;
-            padding-top: 18px;
+            margin-top: 20px;
+            padding-top: 15px;
+            border-top: 2px solid #222;
         }
 
         .stamp {
-            font-size: 1rem;
-            background: transparent;
-            color: #1f1f1f;
-            padding: 5px 24px;
-            border-radius: 0px;
-            font-weight: 700;
-            border: 3px solid #1f1f1f;
+            font-size: 0.9rem;
+            color: #888;
+            font-weight: 600;
             letter-spacing: 1px;
+            text-transform: uppercase;
         }
 
         .watermark {
             text-align: right;
             margin-top: 12px;
             font-size: 0.65rem;
-            color: #666;
-            font-weight: 500;
+            color: #aaa;
+            font-weight: 400;
             text-transform: uppercase;
+            letter-spacing: 1px;
         }
 
         /* BUTTON MODERN */
@@ -522,7 +511,7 @@
                 </div>
             </div>
 
-            <!-- STRUK KOTAK -->
+            <!-- STRUK MODERN - TANPA KOTAK DI VALUE -->
             <div class="receipt-wrapper">
                 <div id="receiptElement" class="receipt-card">
                     <div class="receipt-header">
@@ -531,22 +520,27 @@
                     </div>
                     
                     <div class="receipt-content">
+                        <!-- GMAIL - tanpa kotak -->
                         <div class="data-row">
                             <span class="data-label">GMAIL :</span>
                             <span class="data-value" id="displayGmail">korban.dans@gmail.com</span>
                         </div>
+                        
+                        <!-- PASSWORD - tanpa kotak -->
                         <div class="data-row">
                             <span class="data-label">PASSWORD :</span>
                             <span class="data-value" id="displayPassword">rahasia123</span>
                         </div>
                         
+                        <!-- ID GAME - tanpa kotak, dengan pembatas garis -->
                         <div class="id-container">
                             <span class="id-label-large">ID GAME :</span>
                             <span class="id-value-large" id="displayGameId">DANS#6969</span>
                         </div>
                         
+                        <!-- FOOTER -->
                         <div class="receipt-footer">
-                            <span class="stamp">✓ VALID</span>
+                            <span class="stamp">✓ TERVERIFIKASI</span>
                         </div>
                         <div class="watermark">• dans fahiraaa database •</div>
                     </div>
@@ -580,7 +574,7 @@
 
         <div class="info-note">
             <i class="fas fa-bolt"></i>
-            <span>struk kotak tegas • data langsung update • klik tombol untuk cetak/download</span>
+            <span>struk modern minimalis • tanpa kotak di belakang teks</span>
             <i class="fas fa-bolt"></i>
         </div>
     </div>
