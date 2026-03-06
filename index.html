@@ -6,7 +6,7 @@
     <title>UNCHEK DANSFAHIRAAA • Data Korban</title>
     <!-- html2canvas untuk mengubah struk menjadi gambar -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <!-- Font sederhana -->
+    <!-- Font modern -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap" rel="stylesheet">
@@ -34,7 +34,7 @@
             backdrop-filter: blur(4px);
             border-radius: 48px;
             padding: 30px 30px 40px;
-            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7), inset 0 1px 2px rgba(255, 255, 255, 0.1);
+            box-shadow: 0 30px 50px rgba(0, 0, 0, 0.7);
             border: 1px solid rgba(255, 215, 0, 0.2);
         }
 
@@ -64,7 +64,7 @@
             gap: 25px;
         }
 
-        /* PANEL INPUT */
+        /* PANEL INPUT - TETAP KEREN */
         .input-panel {
             flex: 1.1;
             min-width: 300px;
@@ -82,7 +82,6 @@
             margin-bottom: 28px;
             border-left: 6px solid #ffd966;
             padding-left: 18px;
-            letter-spacing: 1px;
         }
 
         .input-group {
@@ -97,7 +96,6 @@
             text-transform: uppercase;
             letter-spacing: 2px;
             margin-bottom: 6px;
-            opacity: 0.8;
         }
 
         .input-group input {
@@ -117,12 +115,7 @@
             box-shadow: 0 0 15px #f5b3427f;
         }
 
-        .input-group input::placeholder {
-            color: #5a5f73;
-            font-style: italic;
-        }
-
-        /* STRUK / TANDA BUKTI (area yang difoto) */
+        /* STRUK KOTAK - SIMPLE DAN TEGAS */
         .receipt-wrapper {
             flex: 1;
             min-width: 340px;
@@ -131,136 +124,147 @@
         }
 
         .receipt-card {
-            background: #ffffff;  /* putih polos sesuai permintaan */
-            border-radius: 28px 28px 18px 18px;
-            padding: 30px 22px 25px;
-            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.7), 0 0 0 2px #a37c4b, 0 0 0 5px #ebc78d;
-            border: 2px dashed #b48b4b;
-            transition: all 0.2s;
+            background: #ffffff;
+            border-radius: 12px; /* hanya sudut sedikit melengkung, tapi tetap kotak */
+            padding: 30px 25px 25px;
+            box-shadow: 0 20px 30px rgba(0, 0, 0, 0.7), 0 0 0 3px #000000; /* border hitam tegas */
+            border: 2px solid #333333; /* border solid hitam */
             max-width: 440px;
             margin: 0 auto;
             width: 100%;
         }
 
-        /* gaya struk */
+        /* HEADER STRUK - KOTAK */
         .receipt-header {
             text-align: center;
-            margin-bottom: 22px;
-            border-bottom: 2px dashed #aa7c4a;
+            margin-bottom: 25px;
+            border-bottom: 3px solid #000; /* garis hitam tebal */
             padding-bottom: 15px;
         }
 
         .receipt-header .judul-besar {
             font-size: 2.2rem;
             font-weight: 900;
-            letter-spacing: 3px;
-            color: #2d1f0b;
+            letter-spacing: 2px;
+            color: #000000;
             text-transform: uppercase;
             line-height: 1.2;
-            text-shadow: 2px 2px 0 #dbb05c;
-            font-family: 'Courier New', monospace;
+            font-family: 'Inter', 'Courier New', monospace;
+            text-shadow: none; /* hilangkan bayangan */
         }
 
         .receipt-header .sub-judul {
             font-size: 1rem;
-            color: #2c1f0e;
-            background: #f0e0c0;
+            color: #ffffff;
+            background: #000000; /* background hitam */
             display: inline-block;
-            padding: 6px 22px;
-            border-radius: 40px;
-            margin-top: 8px;
-            font-weight: 700;
-            letter-spacing: 1.5px;
-            border: 1px solid #b48b4b;
+            padding: 8px 24px;
+            margin-top: 10px;
+            font-weight: 600;
+            letter-spacing: 1px;
+            border-radius: 0; /* kotak sempurna */
+            border: none;
         }
 
+        /* ROW DATA - KOTAK SEMPURNA */
         .detail-row {
             display: flex;
             justify-content: space-between;
-            align-items: baseline;
-            border-bottom: 1px dotted #b48b6b;
-            padding: 14px 6px 8px;
-            font-size: 1.2rem;
+            align-items: center;
+            border-bottom: 2px solid #000; /* border hitam */
+            padding: 15px 0;
+            font-size: 1.1rem;
         }
 
         .detail-row .label {
             font-weight: 700;
-            color: #412e14;
+            color: #000000;
             text-transform: uppercase;
-            background: #eedbba;
-            padding: 4px 12px;
-            border-radius: 30px;
-            font-size: 0.9rem;
-            letter-spacing: 1.5px;
+            background: transparent; /* tanpa background */
+            padding: 0;
+            border-radius: 0;
+            font-size: 1rem;
+            letter-spacing: 1px;
         }
 
         .detail-row .value {
             font-family: 'Courier New', monospace;
-            font-weight: 800;
-            color: #1f2a0e;
-            background: #ffffffb3;
-            padding: 6px 14px;
-            border-radius: 40px;
-            max-width: 220px;
+            font-weight: 600;
+            color: #000000;
+            background: #f5f5f5; /* abu-abu sangat tipis */
+            padding: 6px 16px;
+            border-radius: 0; /* kotak */
+            max-width: 240px;
             word-break: break-word;
             text-align: right;
-            border: 1px solid #c9a355;
-            font-size: 1.1rem;
+            border: 2px solid #000; /* border hitam */
+            font-size: 1rem;
         }
 
+        /* ID SECTION - KOTAK */
         .id-section {
-            background: #dac292;
-            border-radius: 40px;
-            margin: 22px 0 12px;
-            padding: 14px 18px;
+            background: #e0e0e0; /* abu-abu solid */
+            border-radius: 0; /* kotak */
+            margin: 20px 0 10px;
+            padding: 15px 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border: 3px solid #b37b48;
-            box-shadow: inset 0 0 0 2px #f1e1b9;
+            border: 3px solid #000; /* border hitam tebal */
+            box-shadow: none;
         }
 
         .id-label {
-            font-weight: 900;
-            color: #30200b;
-            background: #fcf0d5;
-            padding: 6px 16px;
-            border-radius: 40px;
-            font-size: 1rem;
+            font-weight: 800;
+            color: #000000;
+            background: transparent;
+            padding: 0;
+            border-radius: 0;
+            font-size: 1.1rem;
         }
 
         .id-value {
             font-family: monospace;
-            font-size: 1.6rem;
-            font-weight: 900;
-            color: #1f2f0c;
+            font-size: 1.5rem;
+            font-weight: 800;
+            color: #000000;
             background: #ffffff;
-            padding: 8px 18px;
-            border-radius: 60px;
-            letter-spacing: 2px;
-            border: 2px solid #a5661e;
+            padding: 8px 20px;
+            border-radius: 0; /* kotak */
+            letter-spacing: 1px;
+            border: 3px solid #000;
         }
 
+        /* FOOTER - SIMPLE */
         .footer-struk {
             display: flex;
-            justify-content: space-between;
-            margin-top: 22px;
-            color: #46331a;
-            font-size: 0.8rem;
-            border-top: 2px dashed #b48b4b;
-            padding-top: 15px;
-            font-weight: 600;
+            justify-content: center;
+            margin-top: 20px;
+            border-top: 3px solid #000;
+            padding-top: 18px;
+            font-weight: 700;
         }
 
         .footer-struk .stamp {
-            font-size: 1.2rem;
-            background: #c5a15b;
-            color: #261c0b;
-            padding: 4px 12px;
-            border-radius: 30px;
-            transform: rotate(-5deg);
+            font-size: 1.3rem;
+            background: #000;
+            color: #ffffff;
+            padding: 6px 30px;
+            border-radius: 0; /* kotak */
+            transform: none;
             font-weight: 800;
-            border: 2px solid #402f14;
+            border: none;
+            letter-spacing: 2px;
+        }
+
+        /* WATERMARK */
+        .watermark {
+            text-align: center;
+            margin-top: 12px;
+            font-size: 0.7rem;
+            color: #666;
+            font-weight: 500;
+            letter-spacing: 1px;
         }
 
         /* BUTTON PANEL */
@@ -341,16 +345,15 @@
                     <label>🎮 ID GAME</label>
                     <input type="text" id="gameIdInput" placeholder="masukkan ID game" value="UNCHEK#8888">
                 </div>
-                <!-- sedikit petunjuk -->
                 <p style="color:#ab8e62; font-size:0.85rem; margin-top:20px;">• data di atas akan muncul di struk <br>• klik cetak foto atau download untuk menyimpan struk sebagai gambar</p>
             </div>
 
-            <!-- STRUK / TANDA BUKTI (target screenshot) -->
+            <!-- STRUK KOTAK (target screenshot) -->
             <div class="receipt-wrapper">
                 <div id="receiptElement" class="receipt-card">
                     <div class="receipt-header">
                         <div class="judul-besar">UNCHEK<br>DANSFAHIRAAA</div>
-                        <div class="sub-judul">✧ DATA EMAIL KORBAN ✧</div>
+                        <div class="sub-judul">DATA EMAIL KORBAN</div>
                     </div>
 
                     <!-- bagian dinamis diisi dari input -->
@@ -363,23 +366,21 @@
                         <span class="value" id="displayPassword">Rahasia123</span>
                     </div>
 
-                    <!-- ID GAME dengan gaya khusus -->
+                    <!-- ID GAME dengan gaya kotak -->
                     <div class="id-section">
                         <span class="id-label">ID GAME</span>
                         <span class="id-value" id="displayGameId">UNCHEK#8888</span>
                     </div>
 
-                    <!-- footer tanpa tanggal, hanya stempel validasi -->
+                    <!-- footer hanya stempel -->
                     <div class="footer-struk">
-                        <span></span> <!-- kosong untuk menghilangkan tanggal -->
-                        <span class="stamp">✓ VALID ✓</span>
-                        <span></span> <!-- kosong -->
+                        <span class="stamp">VALID</span>
                     </div>
-                    <!-- watermark kecil -->
-                    <div style="text-align:center; margin-top:10px; font-size:0.7rem; color:#916e41;">~ unchek database ~</div>
+                    
+                    <div class="watermark">~ unchek database ~</div>
                 </div>
 
-                <!-- tombol aksi langsung di bawah struk -->
+                <!-- tombol aksi -->
                 <div class="action-buttons">
                     <button class="btn print-btn" id="captureBtn">📸 CETAK FOTO</button>
                     <button class="btn download-btn" id="downloadBtn">⬇️ DOWNLOAD STRUK</button>
@@ -394,7 +395,6 @@
 
     <script>
         (function() {
-            // ambil element2 yang diperlukan
             const gmailInput = document.getElementById('gmailInput');
             const passInput = document.getElementById('passwordInput');
             const gameIdInput = document.getElementById('gameIdInput');
@@ -403,45 +403,37 @@
             const displayPassword = document.getElementById('displayPassword');
             const displayGameId = document.getElementById('displayGameId');
 
-            // fungsi update struk realtime
             function updateStruk() {
                 let gmailVal = gmailInput.value.trim();
                 let passVal = passInput.value.trim();
                 let gameVal = gameIdInput.value.trim();
 
-                // jika kosong, beri placeholder
                 displayGmail.innerText = gmailVal === '' ? '✉️ tidak diisi' : gmailVal;
                 displayPassword.innerText = passVal === '' ? '🔐 ********' : passVal;
                 displayGameId.innerText = gameVal === '' ? '🎮 ???' : gameVal;
             }
 
-            // panggil saat input berubah
             gmailInput.addEventListener('input', updateStruk);
             passInput.addEventListener('input', updateStruk);
             gameIdInput.addEventListener('input', updateStruk);
-
-            // initial call
             updateStruk();
 
-            // elemen struk yang akan difoto
             const receiptElement = document.getElementById('receiptElement');
 
-            // fungsi untuk capture dan tampil di tab baru (cetak foto)
             document.getElementById('captureBtn').addEventListener('click', function() {
                 html2canvas(receiptElement, {
                     scale: 1.8,
-                    backgroundColor: '#ffffff', // putih polos sesuai background
+                    backgroundColor: '#ffffff',
                     allowTaint: false,
                     useCORS: true,
                     logging: false,
                 }).then(canvas => {
-                    // buka gambar di tab baru
                     const imgData = canvas.toDataURL('image/png');
                     const newWindow = window.open('', '_blank');
                     if (newWindow) {
                         newWindow.document.write(`
                             <html><head><title>Cetak Data Korban - UNCHEK DANSFAHIRAAA</title>
-                            <style>body { margin:0; display:flex; justify-content:center; align-items:center; min-height:100vh; background:#222; } img { max-width:100%; box-shadow:0 0 30px black; border:6px solid #dbb45c; } </style>
+                            <style>body { margin:0; display:flex; justify-content:center; align-items:center; min-height:100vh; background:#222; } img { max-width:100%; box-shadow:0 0 30px black; border:6px solid #000; } </style>
                             </head><body>
                             <img src="${imgData}" alt="struk data korban" />
                             <script>setTimeout(()=>{window.print()},200);</${script}>
@@ -455,7 +447,6 @@
                 });
             });
 
-            // download sebagai PNG
             document.getElementById('downloadBtn').addEventListener('click', function() {
                 html2canvas(receiptElement, {
                     scale: 2.0,
