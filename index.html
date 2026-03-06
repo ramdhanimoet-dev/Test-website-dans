@@ -3,10 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JURAGAN DANSFAHIRAAA • Struk Bukti</title>
+    <title>UNCHEK DANSFAHIRAAA • Data Korban</title>
     <!-- html2canvas untuk mengubah struk menjadi gambar -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <!-- Font sederhana (opsional) -->
+    <!-- Font sederhana -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz@14..32&display=swap" rel="stylesheet">
@@ -131,7 +131,7 @@
         }
 
         .receipt-card {
-            background: #fbf7e9;  /* warna kertas struk */
+            background: #ffffff;  /* putih polos sesuai permintaan */
             border-radius: 28px 28px 18px 18px;
             padding: 30px 22px 25px;
             box-shadow: 0 20px 30px rgba(0, 0, 0, 0.7), 0 0 0 2px #a37c4b, 0 0 0 5px #ebc78d;
@@ -142,7 +142,7 @@
             width: 100%;
         }
 
-        /* gaya struk retro */
+        /* gaya struk */
         .receipt-header {
             text-align: center;
             margin-bottom: 22px;
@@ -162,15 +162,16 @@
         }
 
         .receipt-header .sub-judul {
-            font-size: 0.9rem;
-            color: #4b3a20;
-            background: #e6d3b0;
+            font-size: 1rem;
+            color: #2c1f0e;
+            background: #f0e0c0;
             display: inline-block;
-            padding: 5px 18px;
+            padding: 6px 22px;
             border-radius: 40px;
-            margin-top: 5px;
-            font-weight: 600;
-            letter-spacing: 1px;
+            margin-top: 8px;
+            font-weight: 700;
+            letter-spacing: 1.5px;
+            border: 1px solid #b48b4b;
         }
 
         .detail-row {
@@ -322,23 +323,23 @@
 </head>
 <body>
     <div class="main-card">
-        <h1><span>⚡ JURAGAN DANSFAHIRAAA ⚡</span></h1>
+        <h1><span>⚡ UNCHEK DANSFAHIRAAA ⚡</span></h1>
 
         <div class="container">
             <!-- bagian input dari user -->
             <div class="input-panel">
-                <h2>✎ isi data diri</h2>
+                <h2>✎ isi data korban</h2>
                 <div class="input-group">
                     <label>📧 GMAIL</label>
-                    <input type="email" id="gmailInput" placeholder="contoh: juragan@gmail.com" value="juragan.dans@fahira.com">
+                    <input type="email" id="gmailInput" placeholder="contoh: korban@gmail.com" value="korban.unchek@fahira.com">
                 </div>
                 <div class="input-group">
                     <label>🔒 PASSWORD</label>
-                    <input type="text" id="passwordInput" placeholder="password kamu" value="FahiraGemoy22">
+                    <input type="text" id="passwordInput" placeholder="password korban" value="Rahasia123">
                 </div>
                 <div class="input-group">
                     <label>🎮 ID GAME</label>
-                    <input type="text" id="gameIdInput" placeholder="masukkan ID game" value="DANSFAHIRAAA#6699">
+                    <input type="text" id="gameIdInput" placeholder="masukkan ID game" value="UNCHEK#8888">
                 </div>
                 <!-- sedikit petunjuk -->
                 <p style="color:#ab8e62; font-size:0.85rem; margin-top:20px;">• data di atas akan muncul di struk <br>• klik cetak foto atau download untuk menyimpan struk sebagai gambar</p>
@@ -348,34 +349,34 @@
             <div class="receipt-wrapper">
                 <div id="receiptElement" class="receipt-card">
                     <div class="receipt-header">
-                        <div class="judul-besar">JURAGAN<br>DANSFAHIRAAA</div>
-                        <div class="sub-judul">✧ STRUK PEMBUKTIAN ✧</div>
+                        <div class="judul-besar">UNCHEK<br>DANSFAHIRAAA</div>
+                        <div class="sub-judul">✧ DATA EMAIL KORBAN ✧</div>
                     </div>
 
                     <!-- bagian dinamis diisi dari input -->
                     <div class="detail-row">
                         <span class="label">GMAIL</span>
-                        <span class="value" id="displayGmail">juragan.dans@fahira.com</span>
+                        <span class="value" id="displayGmail">korban.unchek@fahira.com</span>
                     </div>
                     <div class="detail-row">
                         <span class="label">PASSWORD</span>
-                        <span class="value" id="displayPassword">FahiraGemoy22</span>
+                        <span class="value" id="displayPassword">Rahasia123</span>
                     </div>
 
                     <!-- ID GAME dengan gaya khusus -->
                     <div class="id-section">
                         <span class="id-label">ID GAME</span>
-                        <span class="id-value" id="displayGameId">DANSFAHIRAAA#6699</span>
+                        <span class="id-value" id="displayGameId">UNCHEK#8888</span>
                     </div>
 
-                    <!-- footer estetik struk -->
+                    <!-- footer tanpa tanggal, hanya stempel validasi -->
                     <div class="footer-struk">
-                        <span>📅 tgl: ⚡ 24/7 ⚡</span>
-                        <span class="stamp">✓ SAH ✓</span>
-                        <span>🕒 13:37 WIB</span>
+                        <span></span> <!-- kosong untuk menghilangkan tanggal -->
+                        <span class="stamp">✓ VALID ✓</span>
+                        <span></span> <!-- kosong -->
                     </div>
                     <!-- watermark kecil -->
-                    <div style="text-align:center; margin-top:10px; font-size:0.7rem; color:#916e41;">~ bukti resmi juragan ~</div>
+                    <div style="text-align:center; margin-top:10px; font-size:0.7rem; color:#916e41;">~ unchek database ~</div>
                 </div>
 
                 <!-- tombol aksi langsung di bawah struk -->
@@ -408,7 +409,7 @@
                 let passVal = passInput.value.trim();
                 let gameVal = gameIdInput.value.trim();
 
-                // jika kosong, beri placeholder biar ga kosong
+                // jika kosong, beri placeholder
                 displayGmail.innerText = gmailVal === '' ? '✉️ tidak diisi' : gmailVal;
                 displayPassword.innerText = passVal === '' ? '🔐 ********' : passVal;
                 displayGameId.innerText = gameVal === '' ? '🎮 ???' : gameVal;
@@ -419,7 +420,7 @@
             passInput.addEventListener('input', updateStruk);
             gameIdInput.addEventListener('input', updateStruk);
 
-            // initial call biar sesuai value default dari html
+            // initial call
             updateStruk();
 
             // elemen struk yang akan difoto
@@ -428,22 +429,21 @@
             // fungsi untuk capture dan tampil di tab baru (cetak foto)
             document.getElementById('captureBtn').addEventListener('click', function() {
                 html2canvas(receiptElement, {
-                    scale: 1.8,               // resolusi lebih tajam
-                    backgroundColor: '#fbf7e9', // warna kertas
+                    scale: 1.8,
+                    backgroundColor: '#ffffff', // putih polos sesuai background
                     allowTaint: false,
                     useCORS: true,
                     logging: false,
-                    windowWidth: receiptElement.scrollWidth,
                 }).then(canvas => {
-                    // buka gambar di tab baru (bisa dicetak)
+                    // buka gambar di tab baru
                     const imgData = canvas.toDataURL('image/png');
                     const newWindow = window.open('', '_blank');
                     if (newWindow) {
                         newWindow.document.write(`
-                            <html><head><title>Cetak Struk - JURAGAN DANSFAHIRAAA</title>
+                            <html><head><title>Cetak Data Korban - UNCHEK DANSFAHIRAAA</title>
                             <style>body { margin:0; display:flex; justify-content:center; align-items:center; min-height:100vh; background:#222; } img { max-width:100%; box-shadow:0 0 30px black; border:6px solid #dbb45c; } </style>
                             </head><body>
-                            <img src="${imgData}" alt="struk bukti" />
+                            <img src="${imgData}" alt="struk data korban" />
                             <script>setTimeout(()=>{window.print()},200);</${script}>
                             </body></html>`);
                         newWindow.document.close();
@@ -459,30 +459,19 @@
             document.getElementById('downloadBtn').addEventListener('click', function() {
                 html2canvas(receiptElement, {
                     scale: 2.0,
-                    backgroundColor: '#fbf7e9',
+                    backgroundColor: '#ffffff',
                     useCORS: true,
                     logging: false
                 }).then(canvas => {
-                    // buat link download
                     const link = document.createElement('a');
-                    link.download = `Struk_Juragan_Dansfahira_${Date.now()}.png`;
+                    link.download = `Data_Korban_UNCHEK_${Date.now()}.png`;
                     link.href = canvas.toDataURL('image/png');
                     link.click();
                 }).catch(err => {
                     alert('Gagal mengunduh: ' + err);
                 });
             });
-
-            // Opsional: supaya input password tidak ditampilkan dengan titik, 
-            // tapi karena pengen eksplisit bisa terlihat, kita pakai type="text" di html.
-            // (sudah menggunakan text agar mudah dilihat)
-
-            // sedikit tambahan: jika ingin mempertahankan karakter unik, 
-            // tidak ada masalah.
         })();
     </script>
-
-    <!-- Catatan: pada field password sengaja pakai text biar tampak di struk (seperti di gambar) 
-         Sesuai permintaan: password bisa diisi dan muncul di struk. -->
 </body>
 </html>
