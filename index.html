@@ -6,10 +6,10 @@
     <title>DANS FAHIRAAA • Data Korban</title>
     <!-- html2canvas -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-    <!-- Font modern dan icon -->
+    <!-- Font modern hanya untuk panel input (opsional), struk pake font biasa -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700&display=swap" rel="stylesheet">
     <!-- Font Awesome untuk icon modern -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
@@ -26,11 +26,11 @@
             justify-content: center;
             align-items: flex-start;
             padding: 12px;
-            font-family: 'Inter', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
         .main-card {
-            max-width: 500px; /* Lebar maksimum untuk HP */
+            max-width: 500px;
             width: 100%;
             background: rgba(18, 22, 33, 0.95);
             backdrop-filter: blur(12px);
@@ -44,7 +44,7 @@
 
         h1 {
             text-align: center;
-            font-size: 2rem; /* Lebih kecil di HP */
+            font-size: 2rem;
             font-weight: 700;
             letter-spacing: 1px;
             background: linear-gradient(135deg, #FFE9A7, #FFD966);
@@ -54,6 +54,7 @@
             text-shadow: 0 2px 8px rgba(255, 200, 0, 0.3);
             margin-bottom: 16px;
             position: relative;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
         }
 
         h1::after {
@@ -68,11 +69,11 @@
 
         .container {
             display: flex;
-            flex-direction: column; /* Stack vertikal di HP */
+            flex-direction: column;
             gap: 20px;
         }
 
-        /* FORM INPUT MODERN - MOBILE FIRST */
+        /* FORM INPUT MODERN */
         .input-panel {
             width: 100%;
             background: rgba(255, 255, 255, 0.03);
@@ -103,6 +104,7 @@
             font-size: 1.4rem;
             font-weight: 600;
             letter-spacing: -0.3px;
+            font-family: 'Inter', -apple-system, sans-serif;
         }
 
         .input-header h2 span {
@@ -129,6 +131,7 @@
             text-transform: uppercase;
             letter-spacing: 1px;
             margin-bottom: 6px;
+            font-family: 'Inter', -apple-system, sans-serif;
         }
 
         .input-group-modern label i {
@@ -147,7 +150,7 @@
             color: #fff;
             outline: none;
             transition: all 0.25s ease;
-            font-family: 'Inter', sans-serif;
+            font-family: 'Inter', -apple-system, sans-serif;
             backdrop-filter: blur(4px);
             box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.3);
         }
@@ -173,7 +176,7 @@
             color: #FFD966;
         }
 
-        /* STRUK MODERN - TANPA KOTAK DI BELAKANG VALUE - RESPONSIF */
+        /* STRUK DENGAN FONT BIASA (SISTEM DEFAULT) */
         .receipt-wrapper {
             width: 100%;
             display: flex;
@@ -209,7 +212,7 @@
             color: var(--text-light);
             text-transform: uppercase;
             line-height: 1.2;
-            font-family: 'Inter', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
         .sub-judul {
@@ -224,6 +227,7 @@
             display: inline-block;
             backdrop-filter: blur(2px);
             border: 1px solid rgba(255,255,255,0.1);
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
         .receipt-content {
@@ -231,14 +235,14 @@
             background: #ffffff;
         }
 
-        /* ROW DATA - TANPA KOTAK */
+        /* ROW DATA - FONT BIASA */
         .data-row {
             display: flex;
             align-items: baseline;
             margin-bottom: 18px;
             padding-bottom: 10px;
             border-bottom: 1px solid #eaeaea;
-            flex-wrap: wrap; /* Untuk antisipasi teks panjang */
+            flex-wrap: wrap;
         }
 
         .data-label {
@@ -248,11 +252,10 @@
             font-size: 0.8rem;
             min-width: 85px;
             letter-spacing: 0.8px;
-            font-family: 'Inter', sans-serif;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
         .data-value {
-            font-family: 'JetBrains Mono', monospace;
             font-weight: 500;
             color: #111;
             font-size: 0.95rem;
@@ -260,9 +263,10 @@
             margin-left: 10px;
             flex: 1;
             text-align: right;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
-        /* ID GAME - TANPA KOTAK */
+        /* ID GAME - FONT BIASA */
         .id-container {
             margin: 18px 0 15px;
             padding: 12px 0;
@@ -281,16 +285,17 @@
             font-size: 0.9rem;
             text-transform: uppercase;
             letter-spacing: 0.8px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
         .id-value-large {
-            font-family: 'JetBrains Mono', monospace;
             font-size: 1.2rem;
             font-weight: 600;
             color: #000;
             text-align: right;
             word-break: break-word;
             max-width: 100%;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
         /* FOOTER */
@@ -308,6 +313,7 @@
             font-weight: 600;
             letter-spacing: 1px;
             text-transform: uppercase;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
         .watermark {
@@ -318,12 +324,13 @@
             font-weight: 400;
             text-transform: uppercase;
             letter-spacing: 0.5px;
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
         }
 
-        /* BUTTON MODERN - MOBILE */
+        /* BUTTON MODERN */
         .action-buttons {
             display: flex;
-            flex-direction: column; /* Stack di HP */
+            flex-direction: column;
             gap: 12px;
             margin-top: 20px;
         }
@@ -347,6 +354,7 @@
             position: relative;
             overflow: hidden;
             width: 100%;
+            font-family: 'Inter', -apple-system, sans-serif;
         }
 
         .btn-modern::before {
@@ -389,7 +397,7 @@
             color: #e5f0ce;
         }
 
-        /* COLOR PICKER MODERN - MOBILE */
+        /* COLOR PICKER MODERN */
         .color-section {
             margin-top: 20px;
             text-align: center;
@@ -407,6 +415,7 @@
             align-items: center;
             justify-content: center;
             gap: 6px;
+            font-family: 'Inter', -apple-system, sans-serif;
         }
 
         .color-section p i {
@@ -455,6 +464,7 @@
             justify-content: center;
             gap: 6px;
             flex-wrap: wrap;
+            font-family: 'Inter', -apple-system, sans-serif;
         }
 
         .info-note i {
@@ -502,7 +512,7 @@
                 </div>
             </div>
 
-            <!-- STRUK MODERN - TANPA KOTAK DI VALUE -->
+            <!-- STRUK DENGAN FONT BIASA -->
             <div class="receipt-wrapper">
                 <div id="receiptElement" class="receipt-card">
                     <div class="receipt-header">
@@ -511,19 +521,19 @@
                     </div>
                     
                     <div class="receipt-content">
-                        <!-- GMAIL - tanpa kotak -->
+                        <!-- GMAIL - font biasa -->
                         <div class="data-row">
                             <span class="data-label">GMAIL :</span>
                             <span class="data-value" id="displayGmail">korban.dans@gmail.com</span>
                         </div>
                         
-                        <!-- PASSWORD - tanpa kotak -->
+                        <!-- PASSWORD - font biasa -->
                         <div class="data-row">
                             <span class="data-label">PASSWORD :</span>
                             <span class="data-value" id="displayPassword">rahasia123</span>
                         </div>
                         
-                        <!-- ID GAME - tanpa kotak, dengan pembatas garis -->
+                        <!-- ID GAME - font biasa -->
                         <div class="id-container">
                             <span class="id-label-large">ID GAME :</span>
                             <span class="id-value-large" id="displayGameId">DANS#6969</span>
@@ -537,7 +547,7 @@
                     </div>
                 </div>
 
-                <!-- TOMBOL AKSI MODERN - STACK VERTICAL -->
+                <!-- TOMBOL AKSI -->
                 <div class="action-buttons">
                     <button class="btn-modern print-btn" id="captureBtn">
                         <i class="fas fa-camera"></i> CETAK FOTO
@@ -547,7 +557,7 @@
                     </button>
                 </div>
                 
-                <!-- PILIHAN WARNA MODERN -->
+                <!-- PILIHAN WARNA -->
                 <div class="color-section">
                     <p><i class="fas fa-palette"></i> GANTI WARNA HEADER</p>
                     <div class="color-options-modern">
@@ -565,7 +575,7 @@
 
         <div class="info-note">
             <i class="fas fa-bolt"></i>
-            <span>struk modern minimalis • tanpa kotak • mobile friendly</span>
+            <span>struk font biasa • minimalis • mobile friendly</span>
             <i class="fas fa-bolt"></i>
         </div>
     </div>
@@ -599,7 +609,7 @@
 
             document.getElementById('captureBtn').addEventListener('click', function() {
                 html2canvas(receiptElement, {
-                    scale: 2.0, // Lebih tinggi untuk kualitas HP
+                    scale: 2.0,
                     backgroundColor: '#ffffff',
                     logging: false,
                 }).then(canvas => {
