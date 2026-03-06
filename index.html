@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UNCHEK DAN SFAHIRAAA • Data Korban</title>
+    <title>DANS FAHIRAAA • Data Korban</title>
     <!-- html2canvas -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
     <!-- Font modern -->
@@ -63,12 +63,12 @@
             gap: 25px;
         }
 
-        /* PANEL INPUT - modern */
+        /* PANEL INPUT */
         .input-panel {
             flex: 1.1;
             min-width: 300px;
             background: #1e2132;
-            border-radius: 28px;
+            border-radius: 16px; /* sedikit lengkung tapi tetap kotak */
             padding: 28px;
             border: 1px solid #4a4d6a;
             box-shadow: 0 20px 30px -12px #000000cc;
@@ -101,7 +101,7 @@
             width: 100%;
             background: #121520;
             border: 1.5px solid #3d405b;
-            border-radius: 16px;
+            border-radius: 8px; /* lebih kotak */
             padding: 14px 20px;
             font-size: 1rem;
             color: white;
@@ -115,7 +115,7 @@
             box-shadow: 0 0 0 3px #f5b34230;
         }
 
-        /* STRUK SESUAI GAMBAR - dengan warna yang bisa diubah */
+        /* STRUK KOTAK - TANPA LENGKUNGAN */
         .receipt-wrapper {
             flex: 1;
             min-width: 340px;
@@ -123,31 +123,29 @@
             flex-direction: column;
         }
 
-        /* VARIABEL WARNA - ubah di sini sesuai selera */
         .receipt-card {
-            --header-bg: #2c3e50;      /* warna background header (biru tua) */
+            --header-bg: #2c3e50;      /* warna background header */
             --text-light: #ffffff;      /* warna teks di header */
-            --accent-color: #e67e22;    /* warna aksen (oranye) */
             --border-color: #000000;    /* warna border */
             
             background: #ffffff;
-            border-radius: 24px;
-            padding: 0;  /* padding diatur per section */
+            border-radius: 0px;         /* KOTAK SEMPURNA */
+            padding: 0;
             box-shadow: 0 20px 35px -5px black, 0 0 0 2px #2b2b2b;
-            border: 2px solid var(--border-color);
+            border: 3px solid var(--border-color); /* border tebal */
             max-width: 440px;
             margin: 0 auto;
             width: 100%;
             overflow: hidden;
         }
 
-        /* HEADER STRUK - warna bisa diubah */
+        /* HEADER KOTAK */
         .receipt-header {
             background: var(--header-bg);
             color: var(--text-light);
             padding: 22px 24px 18px;
             text-align: center;
-            border-bottom: 3px solid var(--accent-color);
+            border-bottom: 4px solid #000000; /* border bawah hitam tebal */
         }
 
         .judul-besar {
@@ -167,11 +165,11 @@
             background: rgba(0,0,0,0.3);
             padding: 6px 20px;
             font-weight: 600;
-            border-radius: 40px;
+            border-radius: 0px; /* KOTAK */
             letter-spacing: 0.8px;
             margin-top: 12px;
             display: inline-block;
-            border: 1px solid rgba(255,255,255,0.3);
+            border: 2px solid #000000;
         }
 
         /* KONTEN STRUK */
@@ -184,7 +182,7 @@
             display: flex;
             align-items: baseline;
             margin-bottom: 20px;
-            border-bottom: 2px dashed #ccc;
+            border-bottom: 3px solid #000; /* border hitam tebal */
             padding-bottom: 12px;
         }
 
@@ -203,25 +201,24 @@
             color: #111;
             background: #f5f5f5;
             padding: 8px 16px;
-            border-radius: 12px;
+            border-radius: 0px; /* KOTAK */
             flex: 1;
             text-align: right;
-            border: 1px solid #aaa;
+            border: 2px solid #000;
             font-size: 1rem;
             word-break: break-word;
             margin-left: 15px;
-            box-shadow: inset 0 1px 3px rgba(0,0,0,0.1);
         }
 
-        /* ID GAME */
+        /* ID GAME - KOTAK */
         .id-container {
             background: #f0f0f0;
-            border-radius: 16px;
+            border-radius: 0px; /* KOTAK */
             padding: 16px 20px;
             display: flex;
             align-items: center;
             justify-content: space-between;
-            border: 2px solid #333;
+            border: 3px solid #000;
             margin: 10px 0 5px;
         }
 
@@ -239,8 +236,8 @@
             color: #000;
             background: white;
             padding: 6px 20px;
-            border-radius: 40px;
-            border: 2px solid #000;
+            border-radius: 0px; /* KOTAK */
+            border: 3px solid #000;
         }
 
         /* FOOTER */
@@ -248,7 +245,7 @@
             display: flex;
             justify-content: flex-end;
             margin-top: 16px;
-            border-top: 2px solid #222;
+            border-top: 4px solid #000;
             padding-top: 16px;
         }
 
@@ -257,9 +254,9 @@
             background: transparent;
             color: #1f1f1f;
             padding: 4px 20px;
-            border-radius: 30px;
+            border-radius: 0px; /* KOTAK */
             font-weight: 600;
-            border: 2px solid #1f1f1f;
+            border: 3px solid #1f1f1f;
         }
 
         .watermark {
@@ -282,7 +279,7 @@
         .btn {
             background: #23263b;
             border: none;
-            border-radius: 50px;
+            border-radius: 8px; /* kotak tapi agak lembut */
             padding: 15px 32px;
             font-weight: 600;
             font-size: 1.2rem;
@@ -322,7 +319,7 @@
             padding-top: 18px;
         }
         
-        /* Pilihan warna - bisa dicoba */
+        /* Pilihan warna */
         .color-options {
             display: flex;
             gap: 10px;
@@ -334,7 +331,7 @@
         .color-btn {
             width: 40px;
             height: 40px;
-            border-radius: 50%;
+            border-radius: 0px; /* KOTAK */
             border: 3px solid white;
             cursor: pointer;
             box-shadow: 0 2px 8px black;
@@ -351,11 +348,12 @@
         .color-btn.purple { background: #4a2c5f; }
         .color-btn.red { background: #8b2c2c; }
         .color-btn.teal { background: #1d5b5b; }
+        .color-btn.orange { background: #d35400; }
     </style>
 </head>
 <body>
     <div class="main-card">
-        <h1><span>⚡ UNCHEK DAN SFAHIRAAA ⚡</span></h1>
+        <h1><span>⚡ DANS FAHIRAAA ⚡</span></h1>
 
         <div class="container">
             <!-- input panel -->
@@ -363,7 +361,7 @@
                 <h2>✎ ISI DATA KORBAN</h2>
                 <div class="input-group">
                     <label>📧 GMAIL</label>
-                    <input type="email" id="gmailInput" placeholder="email korban" value="korban.unchek@gmail.com">
+                    <input type="email" id="gmailInput" placeholder="email korban" value="korban.dans@gmail.com">
                 </div>
                 <div class="input-group">
                     <label>🔒 PASSWORD</label>
@@ -371,17 +369,17 @@
                 </div>
                 <div class="input-group">
                     <label>🎮 ID GAME</label>
-                    <input type="text" id="gameIdInput" placeholder="ID game" value="UNCHEK#6969">
+                    <input type="text" id="gameIdInput" placeholder="ID game" value="DANS#6969">
                 </div>
                 <p style="color:#aab3d5; font-size:0.85rem; margin-top:20px;">• data langsung muncul di struk • klik tombol di bawah</p>
             </div>
 
-            <!-- STRUK SESUAI GAMBAR -->
+            <!-- STRUK KOTAK -->
             <div class="receipt-wrapper">
                 <div id="receiptElement" class="receipt-card">
-                    <!-- HEADER DENGAN WARNA YANG BISA DIGANTI -->
+                    <!-- HEADER KOTAK -->
                     <div class="receipt-header">
-                        <div class="judul-besar">UNCHEK DAN<br>SFAHIRAAA</div>
+                        <div class="judul-besar">DANS<br>FAHIRAAA</div>
                         <div class="sub-judul">BERIKUT DATA KORBAN</div>
                     </div>
                     
@@ -389,7 +387,7 @@
                     <div class="receipt-content">
                         <div class="data-row">
                             <span class="data-label">GMAIL :</span>
-                            <span class="data-value" id="displayGmail">korban.unchek@gmail.com</span>
+                            <span class="data-value" id="displayGmail">korban.dans@gmail.com</span>
                         </div>
                         <div class="data-row">
                             <span class="data-label">PASSWORD :</span>
@@ -398,19 +396,19 @@
                         
                         <!-- ID GAME -->
                         <div class="id-container">
-                            <span class="id-label-large">ID :</span>
-                            <span class="id-value-large" id="displayGameId">UNCHEK#6969</span>
+                            <span class="id-label-large">ID GAME :</span>
+                            <span class="id-value-large" id="displayGameId">DANS#6969</span>
                         </div>
                         
                         <!-- FOOTER -->
                         <div class="receipt-footer">
                             <span class="stamp">✓ VALID</span>
                         </div>
-                        <div class="watermark">• unchek database official •</div>
+                        <div class="watermark">• dans fahiraaa database •</div>
                     </div>
                 </div>
 
-                <!-- TOMBOL AKSI & PILIHAN WARNA -->
+                <!-- TOMBOL AKSI -->
                 <div class="action-buttons">
                     <button class="btn print-btn" id="captureBtn">📸 CETAK FOTO</button>
                     <button class="btn download-btn" id="downloadBtn">⬇️ DOWNLOAD PNG</button>
@@ -425,13 +423,14 @@
                         <div class="color-btn purple" onclick="changeHeaderColor('#4a2c5f')" title="Ungu"></div>
                         <div class="color-btn red" onclick="changeHeaderColor('#8b2c2c')" title="Merah"></div>
                         <div class="color-btn teal" onclick="changeHeaderColor('#1d5b5b')" title="Teal"></div>
+                        <div class="color-btn orange" onclick="changeHeaderColor('#d35400')" title="Oranye"></div>
                     </div>
                 </div>
             </div>
         </div>
 
         <div class="info-note">
-            <i>⚡ struk sesuai gambar: "UNCHEK DAN SFAHIRAAA" • "BERIKUT DATA KORBAN" • GMAIL : PASSWORD : ⚡</i>
+            <i>⚡ struk KOTAK dengan judul "DANS FAHIRAAA" • semua border tegas dan kotak ⚡</i>
         </div>
     </div>
 
@@ -472,7 +471,7 @@
                     const newWindow = window.open('', '_blank');
                     if (newWindow) {
                         newWindow.document.write(`
-                            <html><head><title>Cetak - UNCHEK DAN SFAHIRAAA</title>
+                            <html><head><title>Cetak - DANS FAHIRAAA</title>
                             <style>body { margin:0; display:flex; justify-content:center; align-items:center; min-height:100vh; background:#1d1d2b; } img { max-width:100%; box-shadow:0 0 25px black; border:4px solid #fff; } </style>
                             </head><body>
                             <img src="${imgData}" alt="struk data korban" />
@@ -492,7 +491,7 @@
                     logging: false
                 }).then(canvas => {
                     const link = document.createElement('a');
-                    link.download = `UNCHEK_${Date.now()}.png`;
+                    link.download = `DANS_FAHIRAAA_${Date.now()}.png`;
                     link.href = canvas.toDataURL('image/png');
                     link.click();
                 }).catch(err => alert('Gagal download: ' + err));
