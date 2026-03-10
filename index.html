@@ -2,9 +2,9 @@
 <html lang="id">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>JURAGAN DANSFAHIRAAA · modern pink</title>
-    <!-- Font Awesome 6 (free) -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes">
+    <title>JURAGAN DANSFAHIRAAA · modern</title>
+    <!-- Font Awesome 6 -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         * {
@@ -16,265 +16,226 @@
 
         body {
             min-height: 100vh;
-            background: radial-gradient(circle at 10% 30%, #ffdfe9, #ffc1d0 70%, #ffa6bb);
+            background: #f5f5f7;  /* dasar abu-abu modern */
             display: flex;
             align-items: center;
             justify-content: center;
-            padding: 1.2rem;
-            position: relative;
-        }
-
-        /* glowing orbs — modern pink cerah */
-        body::before {
-            content: "";
-            position: absolute;
-            width: 350px;
-            height: 350px;
-            background: #ffb3c6;
-            border-radius: 50%;
-            top: -50px;
-            left: -40px;
-            filter: blur(95px);
-            opacity: 0.55;
-            z-index: 0;
-        }
-
-        body::after {
-            content: "";
-            position: absolute;
-            width: 400px;
-            height: 400px;
-            background: #ff80a5;
-            border-radius: 50%;
-            bottom: -70px;
-            right: -50px;
-            filter: blur(110px);
-            opacity: 0.45;
-            z-index: 0;
+            padding: 12px;
         }
 
         .bio-card {
-            max-width: 620px;
+            max-width: 420px;  /* proporsi enak di hp */
             width: 100%;
-            background: rgba(255, 245, 248, 0.8);
-            backdrop-filter: blur(18px);
-            -webkit-backdrop-filter: blur(18px);
-            border-radius: 56px;
-            padding: 2.4rem 2.2rem;
-            box-shadow: 0 35px 60px rgba(255, 64, 129, 0.3),
-                        0 0 0 2px rgba(255, 255, 255, 0.7) inset,
-                        0 12px 30px -8px #f65a83;
-            border: 1px solid rgba(255, 210, 230, 0.9);
-            transition: transform 0.2s ease;
-            z-index: 10;
-            position: relative;
+            background: #ffffff;
+            border-radius: 24px;  /* nggak terlalu melengkung */
+            padding: 28px 22px;
+            box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.02) inset;
+            transition: transform 0.2s;
+            border: 1px solid #f0f0f0;
         }
 
-        .bio-card:hover {
-            transform: translateY(-6px);
+        /* header tanpa bintang, teks bold modern */
+        .header {
+            margin-bottom: 28px;
+            text-align: left;
+            padding-left: 4px;
         }
 
-        /* judul JURAGAN DANSFAHIRAAA */
-        .brand-block {
-            text-align: center;
-            margin-bottom: 2rem;
+        .header h1 {
+            font-size: 2.2rem;
+            font-weight: 700;
+            line-height: 1.1;
+            letter-spacing: -0.03em;
+            color: #1d1d1f;  /* dark modern */
+            margin-bottom: 4px;
         }
 
-        .brand-block h1 {
-            font-size: 2.6rem;
+        .header h1 span {
+            color: #e11d48;  /* aksen pink tipis */
             font-weight: 800;
-            line-height: 1.2;
-            background: linear-gradient(145deg, #bf1e5c, #f50057, #ff7b9c);
-            -webkit-background-clip: text;
-            background-clip: text;
-            color: transparent;
-            letter-spacing: -0.02em;
-            text-transform: uppercase;
-            text-shadow: 0 8px 22px #ffb8cf;
         }
 
-        .brand-block .sub-judul {
-            font-size: 1.1rem;
+        .sub-judul {
+            font-size: 0.95rem;
             font-weight: 400;
-            color: #a03e5b;
-            background: rgba(255, 255, 255, 0.5);
-            display: inline-block;
-            padding: 0.3rem 1.6rem;
-            border-radius: 60px;
-            backdrop-filter: blur(4px);
-            margin-top: 8px;
-            border: 1px solid #ffb0c3;
-        }
-
-        /* avatar / decorative circle (optional) */
-        .avatar-placeholder {
-            display: flex;
-            justify-content: center;
-            margin-bottom: 2rem;
-        }
-
-        .pink-circle {
-            width: 110px;
-            height: 110px;
-            background: linear-gradient(145deg, #ff80ab, #ffb2c9);
-            border-radius: 50%;
+            color: #6b6b70;
             display: flex;
             align-items: center;
-            justify-content: center;
-            box-shadow: 0 15px 25px #ff9eb5, 0 0 0 5px #ffeef2 inset;
+            gap: 6px;
+            margin-top: 4px;
         }
 
-        .pink-circle i {
-            font-size: 3.8rem;
-            color: white;
-            filter: drop-shadow(2px 4px 6px #d43f6b);
+        .sub-judul i {
+            color: #e11d48;
+            font-size: 0.8rem;
         }
 
-        /* deskripsi kecil */
-        .greet {
-            text-align: center;
-            font-size: 1.15rem;
-            font-weight: 500;
-            color: #a1355a;
-            background: rgba(255, 220, 235, 0.7);
-            padding: 0.6rem 1.2rem;
-            border-radius: 100px;
-            margin: 1.8rem 0 2rem 0;
-            border: 1px solid #ffbfd5;
-            backdrop-filter: blur(4px);
+        /* bio singkat / headline */
+        .bio-text {
+            background: #f8f8fa;
+            border-radius: 18px;
+            padding: 16px 18px;
+            margin: 22px 0 28px 0;
+            font-size: 1rem;
+            color: #2c2c2e;
+            border: 1px solid #efeff1;
+            font-weight: 450;
+            line-height: 1.4;
         }
 
-        /* list link — semua langsung open (no blank) */
-        .link-grid {
+        .bio-text i {
+            color: #e11d48;
+            margin-right: 6px;
+        }
+
+        /* list link - modern, minimal, pinggiran lurus */
+        .link-list {
             display: flex;
             flex-direction: column;
-            gap: 1rem;
-            margin: 2.4rem 0 2rem;
+            gap: 12px;
+            margin: 24px 0 28px;
         }
 
         .link-item {
             display: flex;
             align-items: center;
             justify-content: space-between;
-            background: rgba(255, 255, 255, 0.7);
-            backdrop-filter: blur(10px);
-            padding: 0.9rem 1.8rem;
-            border-radius: 200px;
-            border: 2px solid rgba(255, 140, 180, 0.5);
-            transition: all 0.2s;
-            cursor: pointer; /* biar terasa seperti klik */
-            text-decoration: none; /* href di bawah akan diabaikan untuk styling, kita pakai onclick */
-            color: inherit;
-            box-shadow: 0 6px 14px rgba(255, 105, 180, 0.2);
+            background: #ffffff;
+            padding: 16px 20px;
+            border-radius: 16px;  /* lebih kotak modern */
+            text-decoration: none;
+            color: #1d1d1f;
+            font-weight: 550;
+            font-size: 1.1rem;
+            border: 1.5px solid #e9e9ed;
+            transition: all 0.2s ease;
+            box-shadow: 0 2px 6px rgba(0,0,0,0.01);
         }
 
+        /* aksen pink hanya di icon dan sedikit border saat hover */
         .link-item:hover {
-            background: #ffe5f0;
-            border-color: #ff4081;
-            transform: scale(1.02);
-            box-shadow: 0 12px 22px #ffb0cb;
+            border-color: #e11d48;
+            background: #fef2f4;
+            transform: scale(1.01);
         }
 
         .link-left {
             display: flex;
             align-items: center;
             gap: 16px;
-            font-weight: 600;
-            font-size: 1.25rem;
-            color: #ac215b;
         }
 
         .link-left i {
-            font-size: 2rem;
-            width: 32px;
-            color: #e91e63;
+            font-size: 1.7rem;
+            width: 30px;
+            color: #e11d48;  /* pink konsisten */
         }
 
         .link-arrow {
-            color: #e64980;
-            font-size: 1.6rem;
-            font-weight: 300;
+            color: #8e8e98;
+            font-size: 1.3rem;
             transition: transform 0.2s;
         }
 
         .link-item:hover .link-arrow {
-            transform: translateX(5px);
+            transform: translateX(4px);
+            color: #e11d48;
         }
 
-        /* catatan kecil footer */
-        .footer-note {
+        /* footer */
+        .footer {
             text-align: center;
-            margin-top: 2.4rem;
-            color: #ad3f64;
+            margin-top: 32px;
+            padding-top: 16px;
+            border-top: 1.5px solid #efeff1;
+            color: #6b6b70;
+            font-size: 0.95rem;
             font-weight: 400;
-            font-size: 1rem;
-            background: rgba(255, 215, 230, 0.7);
-            padding: 0.8rem 1.2rem;
-            border-radius: 100px;
-            border: 1px solid #ffb7cd;
-            backdrop-filter: blur(4px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
         }
 
-        .footer-note i {
-            color: #ff1744;
-            margin: 0 4px;
+        .footer .copyright {
+            color: #8e8e98;
         }
 
-        /* tidak ada target _blank — semua same tab / protocol langsung */
-        /* memastikan pointer di area item */
-        .clickable-area {
-            width: 100%;
+        .footer .est {
+            background: #f1f1f3;
+            padding: 4px 12px;
+            border-radius: 30px;
+            font-size: 0.85rem;
+            color: #4b4b52;
         }
+
+        /* tips kecil */
+        .hint {
+            text-align: center;
+            margin-top: 16px;
+            font-size: 0.8rem;
+            color: #a1a1aa;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 6px;
+        }
+
+        .hint i {
+            color: #e11d48;
+        }
+
+        /* nggak ada bintang, nggak ada lengkung berlebihan, pink cuma aksen */
     </style>
 </head>
 <body>
     <div class="bio-card">
-        <div class="brand-block">
-            <h1>JURAGAN<br>DANSFAHIRAAA</h1>
-            <span class="sub-judul">✦ modern pink cerah ✦</span>
-        </div>
-
-        <!-- aksen avatar biar aesthetic -->
-        <div class="avatar-placeholder">
-            <div class="pink-circle">
-                <i class="fas fa-star"></i> 
-                <!-- icon bintang biar match "juragandans" -->
+        <!-- HEADER: judul JURAGAN DANSFAHIRAAA dengan sedikit aksen pink di "DANSFAHIRAAA" -->
+        <div class="header">
+            <h1>
+                JURAGAN <br><span>DANSFAHIRAAA</span>
+            </h1>
+            <div class="sub-judul">
+                <i class="fas fa-circle" style="font-size: 0.4rem;"></i> 
+                modern connection
+                <i class="fas fa-circle" style="font-size: 0.4rem;"></i>
             </div>
         </div>
 
-        <!-- salam pembuka -->
-        <div class="greet">
-            <i class="fas fa-heart" style="color: #ff1a6e;"></i>  connect langsung tanpa tab baru  <i class="fas fa-heart" style="color: #ff1a6e;"></i>
+        <!-- pengganti avatar / teks bio, tanpa bintang -->
+        <div class="bio-text">
+            <i class="fas fa-bolt"></i> Tap langsung tanpa tab baru · semua link direct ke app / web
         </div>
 
-        <!-- ===== LINK-LINK ===== semua langsung open (ganti halaman/app) -->
-        <div class="link-grid">
-            <!-- 1. WHATSAPP (tap langsung open wa.me) -->
-            <a class="link-item" href="https://wa.me/628815042954" style="cursor: pointer;">
+        <!-- LINK-LINK (target same tab, tanpa _blank) -->
+        <div class="link-list">
+            <!-- WhatsApp -->
+            <a href="https://wa.me/628815042954" class="link-item">
                 <span class="link-left">
                     <i class="fab fa-whatsapp"></i> WhatsApp
                 </span>
                 <span class="link-arrow"><i class="fas fa-arrow-right"></i></span>
             </a>
 
-            <!-- 2. INSTAGRAM (langsung buka IG, tanpa blank) -->
-            <a class="link-item" href="https://www.instagram.com/juragandansfahiraaa.id" style="cursor: pointer;">
+            <!-- Instagram -->
+            <a href="https://www.instagram.com/juragandansfahiraaa.id" class="link-item">
                 <span class="link-left">
                     <i class="fab fa-instagram"></i> Instagram
                 </span>
                 <span class="link-arrow"><i class="fas fa-arrow-right"></i></span>
             </a>
 
-            <!-- 3. SALURAN INFORMASI (WhatsApp channel) -->
-            <a class="link-item" href="https://whatsapp.com/channel/0029VbBuTR70VycGtYmL5i14" style="cursor: pointer;">
+            <!-- Saluran Informasi (WhatsApp Channel) -->
+            <a href="https://whatsapp.com/channel/0029VbBuTR70VycGtYmL5i14" class="link-item">
                 <span class="link-left">
                     <i class="fas fa-bullhorn"></i> Saluran Info
                 </span>
                 <span class="link-arrow"><i class="fas fa-arrow-right"></i></span>
             </a>
 
-            <!-- 4. GRUB WHATSAPP (link grup wa) -->
-            <a class="link-item" href="https://chat.whatsapp.com/EzcbdTjH4EM0gRdSNVKqh2?mode=hq1tcla" style="cursor: pointer;">
+            <!-- Grub WhatsApp -->
+            <a href="https://chat.whatsapp.com/EzcbdTjH4EM0gRdSNVKqh2?mode=hq1tcla" class="link-item">
                 <span class="link-left">
                     <i class="fab fa-whatsapp"></i> Grub WhatsApp
                 </span>
@@ -282,34 +243,19 @@
             </a>
         </div>
 
-        <!-- footer sesuai permintaan: © Juragan DansFahiraaa. | Est 2026 -->
-        <div class="footer-note">
-            <i class="far fa-copyright"></i> Juragan DansFahiraaa. <span style="margin:0 6px;">|</span> Est 2026
+        <!-- FOOTER dengan est 2026 -->
+        <div class="footer">
+            <span class="copyright"><i class="far fa-copyright"></i> Juragan DansFahiraaa.</span>
+            <span class="est">Est 2026</span>
         </div>
 
-        <!-- penjelasan kecil: semua link langsung di halaman yg sama (sesuai kaidah href) -->
-        <div style="text-align: center; margin-top: 1rem; font-size: 0.85rem; color: #b34d71; opacity: 0.8;">
-            <i class="fas fa-mouse-pointer"></i> klik → Untuk Membuka Link
+        <!-- hint kecil -->
+        <div class="hint">
+            <i class="fas fa-hand-pointer"></i> langsung terbuka (tanpa tab baru)
         </div>
     </div>
 
-    <!-- opsional: supaya semua link benar² tanpa _blank, kita paksa dengan JavaScript? 
-         Tapi dari HTML sudah tidak ada target, jadi secara default akan membuka di tab yg sama.
-         Namun untuk memastikan tidak ada _blank dari mana pun, kita tambahkan sedikit JS prevent.
-         Toh semua href sudah valid, langsung replace location.href, tapi ada baiknya memastikan 
-         bahwa jika ada klik tengah atau konteks tetap tidak membuka tab baru?  Biarkan alami.
-         Karena pengguna berharap "open linknya" tanpa tab baru. Ini sudah sesuai.
-    -->
-    <script>
-        (function() {
-            // opsional: mencegah membuka di tab baru untuk semua link dengan target _blank (tidak ada)
-            // tapi amannya kita pastikan tidak ada link yang punya target = _blank 
-            // dan kita bisa tambahkan perilaku jika ingin pindah halaman dengan smoother.
-            // Tujuan: benar-benar ganti halaman same tab. Kita biarkan default href.
-            // Namun untuk pengalaman lebih "aplikatif", kita bisa handle click supaya tidak muncul opsi blank dari browser.
-            // tapi tidak diperlukan, sudah cukup.
-            console.log('✅ semua link langsung open (same tab / app)');
-        })();
-    </script>
+    <!-- nggak ada bintang, nggak pink dominan, pinggiran nggak terlalu lengkung (16-24px) -->
+    <!-- semua link langsung di tab yang sama / buka app -->
 </body>
 </html>
