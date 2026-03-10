@@ -16,7 +16,7 @@
 
         body {
             min-height: 100vh;
-            background: #f5f5f7;  /* dasar abu-abu modern */
+            background: #f5f5f7;
             display: flex;
             align-items: center;
             justify-content: center;
@@ -24,17 +24,15 @@
         }
 
         .bio-card {
-            max-width: 420px;  /* proporsi enak di hp */
+            max-width: 420px;
             width: 100%;
             background: #ffffff;
-            border-radius: 24px;  /* nggak terlalu melengkung */
+            border-radius: 24px;
             padding: 28px 22px;
             box-shadow: 0 20px 35px -8px rgba(0, 0, 0, 0.08), 0 0 0 1px rgba(0, 0, 0, 0.02) inset;
-            transition: transform 0.2s;
             border: 1px solid #f0f0f0;
         }
 
-        /* header tanpa bintang, teks bold modern */
         .header {
             margin-bottom: 28px;
             text-align: left;
@@ -46,12 +44,12 @@
             font-weight: 700;
             line-height: 1.1;
             letter-spacing: -0.03em;
-            color: #1d1d1f;  /* dark modern */
+            color: #1d1d1f;
             margin-bottom: 4px;
         }
 
         .header h1 span {
-            color: #e11d48;  /* aksen pink tipis */
+            color: #e11d48;
             font-weight: 800;
         }
 
@@ -70,30 +68,13 @@
             font-size: 0.8rem;
         }
 
-        /* bio singkat / headline */
-        .bio-text {
-            background: #f8f8fa;
-            border-radius: 18px;
-            padding: 16px 18px;
-            margin: 22px 0 28px 0;
-            font-size: 1rem;
-            color: #2c2c2e;
-            border: 1px solid #efeff1;
-            font-weight: 450;
-            line-height: 1.4;
-        }
+        /* bio-text dihapus (tidak ada teks perantara) */
 
-        .bio-text i {
-            color: #e11d48;
-            margin-right: 6px;
-        }
-
-        /* list link - modern, minimal, pinggiran lurus */
         .link-list {
             display: flex;
             flex-direction: column;
             gap: 12px;
-            margin: 24px 0 28px;
+            margin: 8px 0 28px;  /* margin atas dikurangi karena bio-text hilang */
         }
 
         .link-item {
@@ -102,7 +83,7 @@
             justify-content: space-between;
             background: #ffffff;
             padding: 16px 20px;
-            border-radius: 16px;  /* lebih kotak modern */
+            border-radius: 16px;
             text-decoration: none;
             color: #1d1d1f;
             font-weight: 550;
@@ -112,7 +93,6 @@
             box-shadow: 0 2px 6px rgba(0,0,0,0.01);
         }
 
-        /* aksen pink hanya di icon dan sedikit border saat hover */
         .link-item:hover {
             border-color: #e11d48;
             background: #fef2f4;
@@ -128,7 +108,7 @@
         .link-left i {
             font-size: 1.7rem;
             width: 30px;
-            color: #e11d48;  /* pink konsisten */
+            color: #e11d48;
         }
 
         .link-arrow {
@@ -142,7 +122,6 @@
             color: #e11d48;
         }
 
-        /* footer */
         .footer {
             text-align: center;
             margin-top: 32px;
@@ -170,28 +149,12 @@
             color: #4b4b52;
         }
 
-        /* tips kecil */
-        .hint {
-            text-align: center;
-            margin-top: 16px;
-            font-size: 0.8rem;
-            color: #a1a1aa;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            gap: 6px;
-        }
-
-        .hint i {
-            color: #e11d48;
-        }
-
-        /* nggak ada bintang, nggak ada lengkung berlebihan, pink cuma aksen */
+        /* semua teks keterangan telah dihapus */
     </style>
 </head>
 <body>
     <div class="bio-card">
-        <!-- HEADER: judul JURAGAN DANSFAHIRAAA dengan sedikit aksen pink di "DANSFAHIRAAA" -->
+        <!-- HEADER -->
         <div class="header">
             <h1>
                 JURAGAN <br><span>DANSFAHIRAAA</span>
@@ -203,12 +166,9 @@
             </div>
         </div>
 
-        <!-- pengganti avatar / teks bio, tanpa bintang -->
-        <div class="bio-text">
-            <i class="fas fa-bolt"></i> Tap langsung tanpa tab baru · semua link direct ke app / web
-        </div>
+        <!-- BIO TEXT TELAH DIHAPUS (sesuai perintah) -->
 
-        <!-- LINK-LINK (target same tab, tanpa _blank) -->
+        <!-- LINK-LINK -->
         <div class="link-list">
             <!-- WhatsApp -->
             <a href="https://wa.me/628815042954" class="link-item">
@@ -226,7 +186,7 @@
                 <span class="link-arrow"><i class="fas fa-arrow-right"></i></span>
             </a>
 
-            <!-- Saluran Informasi (WhatsApp Channel) -->
+            <!-- Saluran Informasi -->
             <a href="https://whatsapp.com/channel/0029VbBuTR70VycGtYmL5i14" class="link-item">
                 <span class="link-left">
                     <i class="fas fa-bullhorn"></i> Saluran Info
@@ -243,19 +203,13 @@
             </a>
         </div>
 
-        <!-- FOOTER dengan est 2026 -->
+        <!-- FOOTER -->
         <div class="footer">
             <span class="copyright"><i class="far fa-copyright"></i> Juragan DansFahiraaa.</span>
             <span class="est">Est 2026</span>
         </div>
 
-        <!-- hint kecil -->
-        <div class="hint">
-            <i class="fas fa-hand-pointer"></i> langsung terbuka (tanpa tab baru)
-        </div>
+        <!-- TIDAK ADA KETERANGAN APAPUN DI BAWAH -->
     </div>
-
-    <!-- nggak ada bintang, nggak pink dominan, pinggiran nggak terlalu lengkung (16-24px) -->
-    <!-- semua link langsung di tab yang sama / buka app -->
 </body>
 </html>
